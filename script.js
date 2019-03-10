@@ -12,9 +12,19 @@ function gotoPage(url, dir)
         var page = client.responseText;
         var content = page.substring(page.indexOf('<div id="content">') + 18, page.indexOf('</div> <!-- end of content -->'));
         var title = page.substring(page.indexOf('<title>') + 7, page.indexOf('</title>'));
-        document.getElementById("content").innerHTML = content;
-        window.history.pushState({}, title, url);
-        document.title = title;
+        
+        setTimeout(function () 
+        {
+            document.getElementById("content").innerHTML = content;
+            window.history.pushState({}, title, url);
+            document.title = title;
+            document.getElementById("content").classList.add("in");
+            
+            setTimeout(function () 
+            {
+                document.getElementById("content").className = " ";
+            }, 805);
+        }, 550);
     }
     client.send();
 }

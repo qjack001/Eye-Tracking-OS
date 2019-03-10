@@ -88,7 +88,8 @@ body
     top: 0;
     left: 0;
     width: 100% !important;
-    animation: border-in-hor 0.4s ease-in;
+    animation: border-in-hor 0.4s ease-in, border-opac 0.5s linear;
+    animation-delay: 0.5s, 0s;
 }
 
 .border.top div
@@ -98,12 +99,31 @@ body
     text-align: center;
 }
 
+@keyframes border-opac
+{
+    0%
+    {
+        opacity: 0;
+    }
+    
+    99%
+    {
+        opacity: 0;
+    }
+    
+    100%
+    {
+        opacity: 1;
+    }
+}
+
 .border.right, .target.right
 {
     top: 0;
     right: 0;
     height: 100% !important;
-    animation: border-in-vert 0.4s ease-in;
+    animation: border-in-vert 0.4s ease-in, border-opac 0.5s linear;
+    animation-delay: 0.5s, 0s;
 }
 
 .border.right div
@@ -119,7 +139,8 @@ body
     bottom: 0;
     left: 0;
     width: 100% !important;
-    animation: border-in-hor 0.4s ease-in;
+    animation: border-in-hor 0.4s ease-in, border-opac 0.5s linear;
+    animation-delay: 0.5s, 0s;
 }
 
 .border.bottom div
@@ -134,7 +155,8 @@ body
     top: 0;
     left: 0;
     height: 100% !important;
-    animation: border-in-vert 0.4s ease-in;
+    animation: border-in-vert 0.4s ease-in, border-opac 0.5s linear;
+    animation-delay: 0.5s, 0s;
 }
 
 .border.left div
@@ -154,12 +176,12 @@ body
     position: absolute;
 }
 
-border.transition
+div.border.transition
 {
-    height: 100%;
-    width: 100%;
-    z-index: 1000;
-    transition: all 0.5s ease;
+    height: 100% !important;
+    width: 100% !important;
+    z-index: 1000 !important;
+    transition: all 0.5s ease !important;
 }
 
 .film
@@ -277,6 +299,38 @@ border.transition
     transition: all 0.6s ease-out;
 }
 
+#content.transition-top.in div.film
+{
+    transform: translateY(-100px);
+    opacity: 0;
+    animation: film-in 0.4s ease-in;
+    animation-fill-mode: forwards;
+}
+
+#content.transition-right.in div.film
+{
+    transform: translateX(100px);
+    opacity: 0;
+    animation: film-in 0.4s ease-in;
+    animation-fill-mode: forwards;
+}
+
+#content.transition-bottom.in div.film
+{
+    transform: translateY(100px);
+    opacity: 0;
+    animation: film-in 0.4s ease-in;
+    animation-fill-mode: forwards;
+}
+
+#content.transition-left.in div.film
+{
+    transform: translateX(-100px);
+    opacity: 0;
+    animation: film-in 0.4s ease-in;
+    animation-fill-mode: forwards;
+}
+
 .sub-text.a
 {
     animation-delay: 0.1s !important;   
@@ -388,6 +442,15 @@ border.transition
     animation: pulse 1s infinite;
 }
 
+@keyframes film-in
+{
+    100%
+    {
+        transform: translateX(0px) translateY(0px);
+        opacity: 1;
+    }
+}
+
 @keyframes pulse 
 {
     0% {box-shadow: 0 0 0 0 var(--background);background-color: var(--background);}
@@ -414,11 +477,13 @@ border.transition
 {
     0%
     {
+        opacity: 1;
         width: 0px;
     }
 
     100%
     {
+        opacity: 1;
         width: 20px;
     }
 }
@@ -427,11 +492,13 @@ border.transition
 {
     0%
     {
+        opacity: 1;
         height: 0px;
     }
 
     100%
     {
+        opacity: 1;
         height: 20px;
     }
 }
