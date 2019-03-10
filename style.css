@@ -249,7 +249,7 @@ border.transition
     animation-fill-mode: forwards;
 }
 
-#content.transition-up div.film
+#content.transition-top div.film
 {
     transform: translateY(200px);
     opacity: 0.4;
@@ -263,7 +263,7 @@ border.transition
     transition: all 0.6s ease-out;
 }
 
-#content.transition-down div.film
+#content.transition-bottom div.film
 {
     transform: translateY(-200px);
     opacity: 0.4;

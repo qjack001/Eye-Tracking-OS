@@ -1,7 +1,12 @@
-function gotoPage(url)
+function gotoPage(url, dir)
 {
+    url = "/Eye-Tracking-OS" + url; //for testing on github
     var client = new XMLHttpRequest();
     client.open('GET', url);
+    
+    document.getElementById("border-" + dir).classList.add("transition");
+    document.getElementById("content").className = "transition-" + dir;
+    
     client.onload = function() 
     {
         var page = client.responseText;
