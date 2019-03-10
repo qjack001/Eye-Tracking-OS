@@ -25,8 +25,8 @@
                     --cursor: url(eye.png), default;
                 }
             </style>
-            <div class="target bottom" onclick="if(window.location.href.indexOf('?=') < 0){gotoPage('/drama.html');}else{gotoPage('/' + window.location.href.substring(window.location.href.indexOf('?=') + 2) + '.html');}">
-                <div class="border bottom">
+            <div class="target bottom" onclick="if(window.location.href.indexOf('?=') < 0){gotoPage('/drama.html','bottom');}else{gotoPage('/' + window.location.href.substring(window.location.href.indexOf('?=') + 2) + '.html','bottom');}">
+                <div id="border-bottom" class="border bottom">
                     <div>Back</div>
                 </div>
             </div>
