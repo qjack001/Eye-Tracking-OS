@@ -1,0 +1,407 @@
+html
+{
+    background-color: var(--border);
+    cursor: var(--cursor);
+}
+
+body
+{
+    margin: 0;
+    background-color: var(--background);
+}
+
+#webgazerGazeDot
+{
+    display: none !important;
+}
+
+#webgazerVideoFeed, #webgazerFaceOverlay
+{
+    top: calc(50% - 120px) !important;
+    left: calc(50% - 160px) !important;
+    display: none !important;
+}
+
+#webgazerFaceFeedbackBox
+{
+    top: calc(50% - 79.2px) !important;
+    left: calc(50% - 79.2px) !important;
+    display: none !important;
+}
+
+#webgazerVideoFeed.show, #webgazerFaceOverlay.show, #webgazerFaceFeedbackBox.show
+{
+    display: block !important;
+}
+
+#brightness
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: 2000;
+}
+
+.border
+{
+    position: fixed;
+    background-color: var(--border);
+    width: 20px;
+    height: 20px;
+    transition: all 0.2s ease-out;
+    text-transform: uppercase;
+    text-align: center;
+    overflow: hidden;
+    color: var(--foreground);
+}
+
+.target:hover .border
+{
+    transition: all 0.3s ease;
+    width: 50px;
+    height: 50px;
+}
+
+.border div
+{
+    opacity: 0;
+    line-height: 50px;
+    position: absolute;
+    transition: all 0.2s ease;
+    font-family: "Styrene B";
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+}
+
+.border:hover div
+{
+    opacity: 0.7;
+}
+
+.border.top, .target.top
+{
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    animation: border-in-hor 0.4s ease-in;
+}
+
+.border.top div
+{
+    top: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.border.right, .target.right
+{
+    top: 0;
+    right: 0;
+    height: 100% !important;
+    animation: border-in-vert 0.4s ease-in;
+}
+
+.border.right div
+{
+    top: calc(50vh - 40px);
+    right: 0;
+    width: 50px;
+    transform: rotate(90deg);
+}
+
+.border.bottom, .target.bottom
+{
+    bottom: 0;
+    left: 0;
+    width: 100% !important;
+    animation: border-in-hor 0.4s ease-in;
+}
+
+.border.bottom div
+{
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.border.left, .target.left
+{
+    top: 0;
+    left: 0;
+    height: 100% !important;
+    animation: border-in-vert 0.4s ease-in;
+}
+
+.border.left div
+{
+    top: calc(50vh - 25px);
+    width: 50px;
+    left: 0;
+    transform: rotate(-90deg);
+}
+
+.target
+{
+    width: 45px;
+    height: 45px;
+    outline: none;
+    animation: none;
+    position: absolute;
+}
+
+.film
+{
+    position: absolute;
+    padding: 50px;
+    max-width: 150px;
+    min-width: 150px;
+    height: 225px;
+    overflow: hidden;
+    transition: min-width 0.1s linear 0.4s;
+}
+
+.film img
+{
+    width: 150px;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.5) -1px 3px 8px 0px, 1px 3px 9px 0px rgba(0, 0, 0, 0.8);
+    transition: all 0.3s ease;
+}
+
+.film .text
+{
+    float: right;
+    width: 200px;
+    margin: 30px 20px;
+    font-size: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 300ms cubic-bezier(0.335, 0.01, 0.03, 1.36);
+}
+
+.film h2
+{
+    font-size: 20px;
+    margin-bottom: 0;
+    font-family: "Recoleta";
+    color: var(--foreground-color);
+}
+
+.film p
+{
+    font-family: "Apercu";
+    font-size: 12px;
+    line-height: 1.2rem;
+    text-align: justify;
+    color: var(--foreground-color);
+}
+
+.film .stars
+{
+    animation-delay: 0.3s !important; 
+    animation-duration: 0.8s !important;
+    color: var(--star-color) !important;
+}
+
+.film .sub-text
+{
+    display: inline-block;
+}
+
+.film:hover
+{
+    z-index: 99;
+    width: auto;
+    transition: none;
+    min-width: 400px;
+}
+
+.film:hover img
+{
+    transform: scale(1.02);
+    z-index: 100;
+    position: relative;
+}
+
+.film:hover .text
+{
+    opacity: 1;
+    visibility: visible;
+}
+
+.film:hover .sub-text
+{
+    opacity: 0;
+    animation: text-in 0.6s ease;
+    animation-fill-mode: forwards;
+}
+
+.sub-text.a
+{
+    animation-delay: 0.1s !important;   
+}
+
+.sub-text.b
+{
+    animation-delay: 0.17s !important;
+}
+
+.sub-text.c
+{
+    animation-delay: 0.24s !important; 
+    animation-duration: 0.7s !important;
+}
+
+.setting-container
+{
+    background-color: var(--border);
+    width: calc(100% - 500px);
+    height: 200px;
+    border-radius: 800px;
+    margin: 0 250px;
+    display: grid;
+    grid-template-columns: 1fr calc(100% - 400px) 1fr;
+    grid-template-rows: 1fr;
+}
+
+.setting-option
+{
+    background-color: var(--foreground-color);
+    border-radius: 100%;
+    height: 200px;
+    width: 200px;
+    text-align: center;
+    font-size: 40rem;
+    transition: all 0.5s ease;
+}
+
+.setting-option:hover
+{
+    box-shadow: 0px 5px 17px 2px rgba(0, 0, 0, 0.25), 0px 2px 5px 0px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1);
+}
+
+.material-icons
+{
+    font-size: 60px !important;
+    line-height: 190px !important;
+    color: var(--background) !important;
+    transition: all 0.3s ease;
+}
+
+.setting-option:hover .material-icons
+{
+    color: var(--border) !important;
+}
+
+.setting-title
+{
+    width: 100%;
+    text-align: center;
+    line-height: 200px;
+    font-family: "Styrene B";
+    font-size: 20px;
+    color: var(--foreground);
+}
+
+#calibrator
+{
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--border);
+    display: none;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    cursor: crosshair;
+    align-items: center;
+    place-items: center;
+    grid-row-gap: calc(30vh - 30px);
+    grid-column-gap: calc(30vw - 30px);
+}
+
+#calibrator.show
+{
+    display: grid;
+}
+
+.cali-bttn
+{
+    width: 30px;
+    height: 30px;
+    background-color: var(--background);
+    border-radius: 100%;
+    border: 2px solid transparent;
+    transition: border-color 0.2s linear;
+    justify-self: center;
+    align-self: center;
+    place-self: center;
+}
+
+.cali-bttn:hover
+{
+    border-color: var(--foreground-color);
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse 
+{
+    0% {box-shadow: 0 0 0 0 var(--background);background-color: var(--background);}
+    70% {box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);background-color: var(--foreground-color);}
+    100% {box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);background-color: var(--background);}
+}
+
+@keyframes text-in
+{
+    0%
+    {
+        transform: translateX(-150px);
+        opacity: 0;
+    }
+
+    100%
+    {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes border-in-vert
+{
+    0%
+    {
+        width: 0px;
+    }
+
+    100%
+    {
+        width: 20px;
+    }
+}
+
+@keyframes border-in-hor
+{
+    0%
+    {
+        height: 0px;
+    }
+
+    100%
+    {
+        height: 20px;
+    }
+}
+
+.test
+{
+    background: rgba(255, 192, 203, 0.6) !important;
+    border: 2px dashed red !important;
+}
