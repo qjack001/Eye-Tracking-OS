@@ -1,0 +1,121 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, shrink-to-fit=no'>
+        <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        
+        <title>D-5:30 | Movies > Science Fiction</title>
+        <link rel="stylesheet" type="text/css" href="./style.css" />
+        <meta name="author" content="Maxwell Keleher" />
+        <link id="favicon" rel="shortcut icon" type="image/png" href="./favicon.png">
+        <script src="script.js"></script>
+    </head>
+    
+    <body>
+        <div id="content">
+            <style>
+                :root
+                {
+                    --background: #ADD8E6;
+                    --border: #EEF7FA;
+                    --foreground: #000;
+                    --foreground-color: #485B0B;
+                    --star-color: rgba(72, 91, 11, 0.6);
+                    --cursor: url(eye2.png), default;
+                }
+
+                .film:hover img
+                {
+                    box-shadow: -1px 3px 20px 0px rgba(0, 0, 0, 0.5), -1px 3px 9px 0px rgba(0, 0, 0, 1);
+                }
+
+                .film img
+                {
+                    box-shadow: rgba(0, 0, 0, 0.5) -1px 3px 8px 0px, 1px 3px 9px 0px rgba(0, 0, 0, 0.8);
+                }
+            </style>
+            <div class="target top" onclick="gotoPage('/settings.html?=horror')">
+                <div class="border top">
+                    <div>Settings</div>
+                </div>
+            </div>
+            <div class="target bottom" onclick="gotoPage('/apps.html')">
+                <div class="border bottom">
+                    <div>Search Apps</div>
+                </div>
+            </div>
+            <div class="target right" onclick="gotoPage('/drama.html')">
+                <div class="border right">
+                    <div>Thriller</div>
+                </div>
+            </div>
+            <div class="target left" onclick="gotoPage('/horror.html')">
+                <div class="border left">
+                    <div>Horror</div>
+                </div>
+            </div>
+
+
+            <div class="film" style="top:440px;left:500px;">
+                <img src="film/scifi/WarOfTheWorlds.jpg">
+                <div class="text">
+                    <h2 class="sub-text">War of The Worlds</h2>
+                    <p><span class="sub-text a">The cult-classic docuseries that</span><span class="sub-text b">dives deep into the heart of</span><span class="sub-text c">Vietnamese cuisine.</span></p>
+                    <p class="sub-text stars" style="margin: 0;">1979 &nbsp;•&nbsp; &#9733;&#9733;&#9733;&#9733;&#9734;</p>
+                </div>
+            </div>
+
+            <div class="film" style="top:280px;left:50px;">
+                <img src="film/scifi/Metropolis.PNG">
+                <div class="text">
+                    <h2 class="sub-text">Metropolis</h2>
+                    <p><span class="sub-text a">Epic prank on unsuspecting high</span><span class="sub-text b">school LOSER (gone wrong) (GONE</span><span class="sub-text c">SEXUAL) — not clickbait.</span></p>
+                    <p class="sub-text stars" style="margin: 0;">1957 &nbsp;•&nbsp; &#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                </div>
+            </div>
+
+            <div class="film" style="top:40px;left:440px;">
+                <img src="film/scifi/TheMatrix.jpg">
+                <div class="text">
+                    <h2 class="sub-text">The Matrix</h2>
+                    <p><span class="sub-text a">Gordon "Hannible Lector" Ramsey</span><span class="sub-text b">walks us through some of his most</span><span class="sub-text c">notorious dishes.</span></p>
+                    <p class="sub-text stars" style="margin: 0;">1958 &nbsp;•&nbsp; &#9733;&#9733;&#9733;&#9734;&#9734;</p>
+                </div>
+            </div>
+
+            <div class="film" style="top:80px;left:920px;">
+                <img src="film/scifi/TheIslandOfDrMoreau.jpg">
+                <div class="text">
+                    <h2 class="sub-text">The Isalnd of Dr. Moreau</h2>
+                    <p><span class="sub-text a">A buddy comedy film about unlikely</span><span class="sub-text b">twins (Schwarzenegger &amp; DeVito)</span><span class="sub-text c">who were separated at birth.</span></p>
+                    <p class="sub-text stars" style="margin: 0;">2012 &nbsp;•&nbsp; &#9733;&#9733;&#9733;&#9734;&#9734;</p>
+                </div>
+            </div>
+
+            <div class="film" style="top:400px;left:970px;">
+                <img src="film/scifi/ReadyPlayerOne.jpg">
+                <div class="text">
+                    <h2 class="sub-text">Ready Player One</h2>
+                    <p><span class="sub-text a">Jack's back, and this time he's</span><span class="sub-text b">shiny! He is so, so shiny it's hard to</span><span class="sub-text c">describe how shiny he is.</span></p>
+                    <p class="sub-text stars" style="margin: 0;">1994 &nbsp;•&nbsp; &#9733;&#9733;&#9733;&#9733;&#9734;</p>
+                </div>
+            </div>
+            
+        </div> <!-- end of content -->
+        
+        <div id="brightness"></div>
+        
+        <div id="calibrator">
+            <div class="cali-bttn"></div>
+            <div class="cali-bttn"></div>
+            <div class="cali-bttn"></div>
+            <div class="cali-bttn"></div>
+            <div class="cali-bttn"></div>
+            <div class="cali-bttn"></div>
+            <div class="cali-bttn"></div>
+            <div class="cali-bttn"></div>
+            <div class="cali-bttn"></div>
+        </div>
+    </body>
+</html>
