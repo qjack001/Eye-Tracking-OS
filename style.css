@@ -540,5 +540,9 @@ div.border.transition
 }
 
 .tutorial {
-    text-align: center; 
+    text-align: center;
+    height: 90%; 
+    padding: 20px;
+    margin: 20px; 
+    
 }
