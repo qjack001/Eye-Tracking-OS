@@ -9,7 +9,8 @@
         <link rel="stylesheet" type="text/css" href="./style.css" />
         <meta name="author" content="Maxwell Keleher" />
         <link id="favicon" rel="shortcut icon" type="image/png" href="./favicon.png">
-        <script src="script.js"></script>
+        <script type="text/javascript" src="script.js"></script>
+        <script type="text/javascript" src="main.js"></script>
     </head>
     
     <body>
@@ -34,6 +35,11 @@
                 {
                     box-shadow: rgba(0, 0, 0, 0.5) -1px 3px 8px 0px, 1px 3px 9px 0px rgba(0, 0, 0, 0.8);
                 }
+
+                .testbutton
+                {
+                    text-align: center;
+                }
             </style>
             <div class="target top" onclick="gotoPage('/settings.html?=horror')">
                 <div class="border top">
@@ -53,12 +59,13 @@
                 <div class="static-border-left">
                 </div>
             </div>
-            
             <div class="tutorial"> 
                 <h1>Tutorial</h1>
                 <p><b>Calibrating:</b> To set up the eye tracking navigation, you need to look at the mouse cursor while clicking. This can be accomplished in the calibration window which can be entered by pressing [Calibration Button]<br>
-                    <b>Clicking:</b> Clicking simply requires you to press [Click Button] <br>
-                    
+
+                    <b>Clicking:</b> Clicking simply requires you to press the Spacebar<br>
+                    You can practive clicking with the button below <br>
+
                     <b>Navigation:</b> Setting are accessed via the top edge. You can search with the bottom edge. The left and right edges let you cycle throuhg the genres <br>
                     <br>You can practive clicking with the button below <br>
                 </p>
@@ -72,6 +79,18 @@
                 <p>When you are ready click <button class="tutorial-button" onclick="gotoPage('/drama.html','bottom')">here</button> to move forward!</p>
             
             </div>
+            <div id="testbutton" class="testbutton hover">
+                    <p>Test Button</p>
+            </div>
+            <script>
+                    addToMap("testbutton",function(){
+                        alert("Button Pressed");
+                    });
+                    addElement("testbutton");
+            </script>
+            
+            
+
             
         </div> <!-- end of content -->
         
