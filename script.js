@@ -74,3 +74,15 @@ function playPause()
         vid.pause();
     }
 }
+
+function skipForward() 
+{
+    var vid = document.getElementById("video");
+    vid.currentTime += 5;
+} 
+
+function skipBack() 
+{
+    var vid = document.getElementById("video");
+    vid.currentTime -= 7;
+} 
