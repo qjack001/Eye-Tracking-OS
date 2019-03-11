@@ -509,3 +509,41 @@ div.border.transition
     background: rgba(255, 192, 203, 0.6) !important;
     border: 2px dashed red !important;
 }
+
+.static-border-right
+{
+    position: fixed;
+    background-color: var(--border);
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+    color: var(--foreground);
+    top: 0;
+    right: 0;
+    height: 100% !important;
+    animation: border-in-vert 0.4s ease-in, border-opac 0.5s linear;
+    animation-delay: 0.5s, 0s;
+}
+
+.static-border-left
+{
+    position: fixed;
+    background-color: var(--border);
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+    color: var(--foreground);
+    top: 0;
+    left: 0;
+    height: 100% !important;
+    animation: border-in-vert 0.4s ease-in, border-opac 0.5s linear;
+    animation-delay: 0.5s, 0s;
+}
+
+.tutorial {
+    text-align: center;
+    height: 90%; 
+    padding: 20px;
+    margin: 20px; 
+    
+}
