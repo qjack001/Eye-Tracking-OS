@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, shrink-to-fit=no'>
+        <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        
+        <title>D-5:30 | Movies > Science Fiction</title>
+        <link rel="stylesheet" type="text/css" href="./style.css" />
+        <meta name="author" content="Maxwell Keleher" />
+        <link id="favicon" rel="shortcut icon" type="image/png" href="./favicon.png">
+        <script src="script.js"></script>
+    </head>
+    
+    <body>
+        <div id="content">
+            <style>
+                :root
+                {
+                    --background: #E1D89F;
+                    --border: #F6F4E4;
+                    --foreground: #000;
+                    --foreground-color: #485B0B;
+                    --star-color: rgba(72, 91, 11, 0.6);
+                    --cursor: url(eye2.png), default;
+                }
+
+                .film:hover img
+                {
+                    box-shadow: -1px 3px 20px 0px rgba(0, 0, 0, 0.5), -1px 3px 9px 0px rgba(0, 0, 0, 1);
+                }
+
+                .film img
+                {
+                    box-shadow: rgba(0, 0, 0, 0.5) -1px 3px 8px 0px, 1px 3px 9px 0px rgba(0, 0, 0, 0.8);
+                }
+            </style>
+            <div class="target top" onclick="gotoPage('/settings.html?=horror')">
+                <div class="border top">
+                    <div>Settings</div>
+                </div>
+            </div>
+            <div class="target bottom" onclick="gotoPage('/apps.html')">
+                <div class="border bottom">
+                    <div>Search Apps</div>
+                </div>
+            </div>
+            <div class="target right">
+                <div class="static-border-right">
+                </div>
+            </div>
+            <div class="target left">
+                <div class="static-border-left">
+                </div>
+            </div>
+            
+            <article class="tutorial"> 
+                <h1>Tutorial</h1>
+                <p></p>
+            </article>
+
+
+            
+        </div> <!-- end of content -->
+        
+        <div id="brightness"></div>
+        
+        <div id="calibrator">
+            <div class="cali-bttn"></div>
+            <div class="cali-bttn"></div>
+            <div class="cali-bttn"></div>
+            <div class="cali-bttn"></div>
+            <div class="cali-bttn"></div>
+            <div class="cali-bttn"></div>
+            <div class="cali-bttn"></div>
+            <div class="cali-bttn"></div>
+            <div class="cali-bttn"></div>
+        </div>
+    </body>
+</html>
