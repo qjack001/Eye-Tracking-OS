@@ -4,6 +4,7 @@ function gotoPage(url, dir)
     var client = new XMLHttpRequest();
     client.open('GET', url);
     
+    var oldColor = window.getComputedStyle(document.getElementById("border-" + dir), null).getPropertyValue("background-color");
     document.getElementById("border-" + dir).classList.add("transition");
     document.getElementById("content").className = "transition-" + dir;
     
@@ -12,6 +13,7 @@ function gotoPage(url, dir)
         var page = client.responseText;
         var content = page.substring(page.indexOf('<div id="content">') + 18, page.indexOf('</div> <!-- end of content -->'));
         var title = page.substring(page.indexOf('<title>') + 7, page.indexOf('</title>'));
+        document.body.style.backgroundColor = oldColor;
         
         setTimeout(function () 
         {
@@ -19,6 +21,7 @@ function gotoPage(url, dir)
             window.history.pushState({}, title, url);
             document.title = title;
             document.getElementById("content").classList.add("in");
+            document.body.style.backgroundColor = "var(--background)";
             
             setTimeout(function () 
             {
