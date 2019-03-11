@@ -35,28 +35,35 @@
                     box-shadow: rgba(109, 10, 86, 0.1) -1px 3px 8px 0px, 1px 3px 9px 0px rgba(109, 10, 86, 0.5), rgba(214, 89, 0, 0.2) -1px 2px 20px 2px;
                 }
             </style>
-            <div class="target top" onclick="gotoPage('/settings.html?=drama','top')">
+            <div class="target top" id="top-drama" onclick="gotoPage('/settings.html?=drama','top')">
                 <div id="border-top" class="border top">
                     <div>Settings</div>
                 </div>
             </div>
-            <div class="target bottom" onclick="gotoPage('/apps.html','bottom')">
+            <script>addElement("top-drama")</script>
+
+            <div class="target bottom" id="bottom-drama" onclick="gotoPage('/apps.html','bottom')">
                 <div id="border-bottom" class="border bottom">
                     <div>Search Apps</div>
                 </div>
             </div>
-            <div class="target right" onclick="gotoPage('/horror.html','right')">
+            <script>addElement("bottom-drama")</script>
+
+            <div class="target right" id="right-drama" onclick="gotoPage('/horror.html','right')">
                 <div id="border-right" class="border right">
                     <div>Horror</div>
                 </div>
             </div>
-            <div class="target left" onclick="gotoPage('/scifi.html','left')">
+            <script>addElement("right-drama")</script>
+
+            <div class="target left" id="left-drama" onclick="gotoPage('/scifi.html','left')">
                 <div id="border-left" class="border left">
                     <div>Sci-fi</div>
                 </div>
             </div>
+            <script>addElement("left-drama")</script>
 
-            <div class="film" style="top:400px;left:850px;">
+            <div class="film" id="apocolypse" style="top:400px;left:850px;">
                 <img src="film/3.jpg">
                 <div class="text">
                     <h2 class="sub-text">Apocolypse Now</h2>
@@ -64,8 +71,9 @@
                     <p class="sub-text stars" style="margin: 0;">1979 &nbsp;•&nbsp; &#9733;&#9733;&#9733;&#9733;&#9734;</p>
                 </div>
             </div>
+            <script>addElement("apocolypse")</script>
 
-            <div class="film" style="top:40px;left:40px;">
+            <div class="film" id="angry" style="top:40px;left:40px;">
                 <img src="film/7.jpeg">
                 <div class="text">
                     <h2 class="sub-text">12 Angry Men</h2>
@@ -73,8 +81,9 @@
                     <p class="sub-text stars" style="margin: 0;">1957 &nbsp;•&nbsp; &#9733;&#9733;&#9733;&#9733;&#9733;</p>
                 </div>
             </div>
+            <script>addElement("angry")</script>
 
-            <div class="film" style="top:130px;left:540px;">
+            <div class="film" id="vertigo" style="top:130px;left:540px;">
                 <img src="film/8.jpg">
                 <div class="text">
                     <h2 class="sub-text">Vertigo</h2>
@@ -82,8 +91,9 @@
                     <p class="sub-text stars" style="margin: 0;">1958 &nbsp;•&nbsp; &#9733;&#9733;&#9733;&#9734;&#9734;</p>
                 </div>
             </div>
+            <script>addElement("vertigo")</script>
 
-            <div class="film" style="top:70px;left:950px;">
+            <div class="film" id="django" style="top:70px;left:950px;">
                 <img src="film/6.png">
                 <div class="text">
                     <h2 class="sub-text">Django: Unchained</h2>
@@ -91,8 +101,9 @@
                     <p class="sub-text stars" style="margin: 0;">2012 &nbsp;•&nbsp; &#9733;&#9733;&#9733;&#9734;&#9734;</p>
                 </div>
             </div>
+            <script>addElement("django")</script>
 
-            <div class="film" style="top:450px;left:70px;">
+            <div class="film" id="leon" style="top:450px;left:70px;">
                 <img src="film/5.jpg">
                 <div class="text">
                     <h2 class="sub-text">Léon</h2>
@@ -101,6 +112,7 @@
                 </div>
             </div>
         </div> <!-- end of content -->
+        <script>addElement("leon")</script>
         
         <div id="brightness"></div>
         
