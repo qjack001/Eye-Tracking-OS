@@ -9,7 +9,7 @@
         <link rel="stylesheet" type="text/css" href="./style.css" />
         <meta name="author" content="Maxwell Keleher" />
         <link id="favicon" rel="shortcut icon" type="image/png" href="./favicon.png">
-        <script src="script.js"></script>
+        <script type="text/javascript" src="script.js"></script>
     </head>
     
     <body>
@@ -34,29 +34,36 @@
                     box-shadow: rgba(0, 0, 0, 0.5) -1px 3px 8px 0px, 1px 3px 9px 0px rgba(0, 0, 0, 0.8);
                 }
             </style>
-            <div class="target top" onclick="gotoPage('/settings.html?=scifi','top')">
+            <div class="target top" id="top-scifi" onclick="gotoPage('/settings.html?=scifi','top')">
                 <div id="border-top" class="border top">
                     <div>Settings</div>
                 </div>
             </div>
-            <div class="target bottom" onclick="gotoPage('/apps.html','bottom')">
+            <script>addElement("top-scifi")</script>
+
+            <div class="target bottom" id="bottom-scifi" onclick="gotoPage('/apps.html','bottom')">
                 <div id="border-bottom" class="border bottom">
                     <div>Search Apps</div>
                 </div>
             </div>
-            <div class="target right" onclick="gotoPage('/drama.html','right')">
+            <script>addElement("bottom-scifi")</script>
+
+            <div class="target right" id="right-scifi" onclick="gotoPage('/drama.html','right')">
                 <div id="border-right" class="border right">
                     <div>Drama</div>
                 </div>
             </div>
-            <div class="target left" onclick="gotoPage('/horror.html','left')">
+            <script>addElement("right-scifi")</script>
+
+            <div class="target left" id="left-scifi" onclick="gotoPage('/horror.html','left')">
                 <div id="border-left" class="border left">
                     <div>Horror</div>
                 </div>
             </div>
+            <script>addElement("left-scifi")</script>
 
 
-            <div class="film" style="top:440px;left:500px;">
+            <div class="film" id="wow" style="top:440px;left:500px;">
                 <img src="film/scifi/WarOfTheWorlds.jpg">
                 <div class="text">
                     <h2 class="sub-text">War of The Worlds</h2>
@@ -64,8 +71,9 @@
                     <p class="sub-text stars" style="margin: 0;">1979 &nbsp;•&nbsp; &#9733;&#9733;&#9733;&#9733;&#9734;</p>
                 </div>
             </div>
+            <script>addElement("wow")</script>
 
-            <div class="film" style="top:280px;left:50px;">
+            <div class="film" id="metro" style="top:280px;left:50px;">
                 <img src="film/scifi/Metropolis.PNG">
                 <div class="text">
                     <h2 class="sub-text">Metropolis</h2>
@@ -73,8 +81,9 @@
                     <p class="sub-text stars" style="margin: 0;">1957 &nbsp;•&nbsp; &#9733;&#9733;&#9733;&#9733;&#9733;</p>
                 </div>
             </div>
+            <script>addElement("metro")</script>
 
-            <div class="film" style="top:40px;left:440px;">
+            <div class="film" id="matrix" style="top:40px;left:440px;">
                 <img src="film/scifi/TheMatrix.jpg">
                 <div class="text">
                     <h2 class="sub-text">The Matrix</h2>
@@ -82,17 +91,19 @@
                     <p class="sub-text stars" style="margin: 0;">2001 &nbsp;•&nbsp; &#9733;&#9733;&#9733;&#9733;&#9734;</p>
                 </div>
             </div>
+            <script>addElement("matrix")</script>
 
-            <div class="film" style="top:80px;left:920px;">
+            <div class="film" id="island" style="top:80px;left:920px;">
                 <img src="film/scifi/TheIslandOfDrMoreau.jpg">
                 <div class="text">
-                    <h2 class="sub-text">The Isalnd of Dr. Moreau</h2>
+                    <h2 class="sub-text">Isalnd of Dr. Moreau</h2>
                     <p><span class="sub-text a">A buddy comedy film about unlikely</span><span class="sub-text b">twins (Schwarzenegger &amp; DeVito)</span><span class="sub-text c">who were separated at birth.</span></p>
                     <p class="sub-text stars" style="margin: 0;">2012 &nbsp;•&nbsp; &#9733;&#9733;&#9733;&#9734;&#9734;</p>
                 </div>
             </div>
+            <script>addElement("island")</script>
 
-            <div class="film" style="top:400px;left:970px;">
+            <div class="film" id="rpo" style="top:400px;left:970px;">
                 <img src="film/scifi/ReadyPlayerOne.jpg">
                 <div class="text">
                     <h2 class="sub-text">Ready Player One</h2>
@@ -100,6 +111,7 @@
                     <p class="sub-text stars" style="margin: 0;">1994 &nbsp;•&nbsp; &#9733;&#9733;&#9733;&#9733;&#9734;</p>
                 </div>
             </div>
+            <script>addElement("rpo")</script>
             
         </div> <!-- end of content -->
         
