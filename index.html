@@ -58,10 +58,17 @@
                 <h1>Tutorial</h1>
                 <p><b>Calibrating:</b> To set up the eye tracking navigation, you need to look at the mouse cursor while clicking. This can be accomplished in the calibration window which can be entered by pressing [Calibration Button]<br>
                     <b>Clicking:</b> Clicking simply requires you to press [Click Button] <br>
-                    You can practive clicking with the button below <br>
+                    
                     <b>Navigation:</b> Setting are accessed via the top edge. You can search with the bottom edge. The left and right edges let you cycle throuhg the genres <br>
-            
+                    <br>You can practive clicking with the button below <br>
                 </p>
+                <input id="eyebutton" type="image" src="assets/EyeButton.jpg" onclick="myFunction()"></input>
+                <script> 
+                function myFunction() {
+                    document.getElementById("eyebutton").src = "assets/ClickedEyeButton.jpg";
+                }
+                </script>
+            
             </div>
             
         </div> <!-- end of content -->

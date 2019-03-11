@@ -546,3 +546,8 @@ div.border.transition
     margin: 20px; 
     
 }
+
+.eyebutton {
+    height: 50px; 
+    width: 100px; 
+}
