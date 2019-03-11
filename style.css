@@ -542,7 +542,7 @@ div.border.transition
 
 .tutorial {
     text-align: center;
-    height: 30%; 
+    height: 90%; 
     padding: 20px;
     margin: 20px; 
     
@@ -551,4 +551,11 @@ div.border.transition
 #eyebutton {
     height: 50px; 
     width: 100px; 
+}
+
+.tutorial-button {
+    background:none;
+    border:none;
+    margin:0;
+    padding:0;
 }
