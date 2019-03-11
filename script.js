@@ -2,7 +2,7 @@ var opacity = 0.1;
 
 function gotoPage(url, dir)
 {
-    //url = "/Eye-Tracking-OS" + url; //for testing on github
+    url = "/Eye-Tracking-OS" + url; //for testing on github
     var client = new XMLHttpRequest();
     client.open('GET', url);
     
