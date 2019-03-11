@@ -69,12 +69,7 @@
                     <b>Navigation:</b> Setting are accessed via the top edge. You can search with the bottom edge. The left and right edges let you cycle throuhg the genres <br>
                     <br>You can practive clicking with the button below <br>
                 </p>
-                <input id="eyebutton" type="image" src="assets/EyeButton.jpg" onclick="myFunction()"></input>
-                <script> 
-                function myFunction() {
-                    document.getElementById("eyebutton").src = "assets/ClickedEyeButton.jpg";
-                }
-                </script>
+                <img id="eyebutton" type="image" src="assets/EyeButton.jpg"></img>
             
             </div>
             <div id="testbutton" class="testbutton hover">
@@ -82,7 +77,7 @@
             </div>
             <script>
                     addToMap("testbutton",function(){
-                        alert("Button Pressed");
+                        document.getElementById("eyebutton").src = "assets/ClickedEyeButton.jpg";
                     });
                     addElement("testbutton");
             </script>
