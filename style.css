@@ -8,7 +8,7 @@ body
 {
     margin: 0;
     background-color: var(--background);
-    transition: background-color 1s ease;
+    transition: background-color 1.8s linear;
 }
 
 #webgazerGazeDot
@@ -272,63 +272,63 @@ div.border.transition
     animation-fill-mode: forwards;
 }
 
-#content.transition-top div.film
+#content.transition-top div.film, #content.transition-top div.setting-container 
 {
     transform: translateY(200px);
     opacity: 0.4;
-    transition: all 0.6s ease-out;
+    transition: all 0.6s ease;
 }
 
-#content.transition-right div.film
+#content.transition-right div.film, #content.transition-right div.setting-container 
 {
     transform: translateX(-200px);
     opacity: 0.4;
-    transition: all 0.6s ease-out;
+    transition: all 0.6s ease;
 }
 
-#content.transition-bottom div.film
+#content.transition-bottom div.film, #content.transition-bottom div.setting-container 
 {
     transform: translateY(-200px);
     opacity: 0.4;
-    transition: all 0.6s ease-out;
+    transition: all 0.6s ease;
 }
 
-#content.transition-left div.film
+#content.transition-left div.film, #content.transition-left div.setting-container 
 {
     transform: translateX(200px);
     opacity: 0.4;
-    transition: all 0.6s ease-out;
+    transition: all 0.6s ease;
 }
 
-#content.transition-top.in div.film
+#content.transition-top.in div.film, #content.transition-top.in div.setting-container 
 {
     transform: translateY(-100px);
     opacity: 0;
-    animation: film-in 0.4s ease-in;
+    animation: film-in 0.4s ease;
     animation-fill-mode: forwards;
 }
 
-#content.transition-right.in div.film
+#content.transition-right.in div.film, #content.transition-right.in div.setting-container 
 {
     transform: translateX(100px);
     opacity: 0;
-    animation: film-in 0.4s ease-in;
+    animation: film-in 0.4s ease;
     animation-fill-mode: forwards;
 }
 
-#content.transition-bottom.in div.film
+#content.transition-bottom.in div.film, #content.transition-bottom.in div.setting-container 
 {
     transform: translateY(100px);
     opacity: 0;
-    animation: film-in 0.4s ease-in;
+    animation: film-in 0.4s ease;
     animation-fill-mode: forwards;
 }
 
-#content.transition-left.in div.film
+#content.transition-left.in div.film, #content.transition-left.in div.setting-container 
 {
     transform: translateX(-100px);
     opacity: 0;
-    animation: film-in 0.4s ease-in;
+    animation: film-in 0.4s ease;
     animation-fill-mode: forwards;
 }
 
