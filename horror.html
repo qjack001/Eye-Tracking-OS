@@ -9,7 +9,7 @@
         <link rel="stylesheet" type="text/css" href="./style.css" />
         <meta name="author" content="Jack Guinane" />
         <link id="favicon" rel="shortcut icon" type="image/png" href="./favicon.png">
-        <script src="script.js"></script>
+        <script  type="text/javascript" src="script.js"></script>
     </head>
     
     <body>
@@ -22,7 +22,6 @@
                     --foreground: #fff;
                     --foreground-color: rgb(255, 216, 0);
                     --star-color: rgba(255, 216, 0, 0.6);
-                    --cursor: url(eye2.png), default;
                 }
 
                 .film:hover img
@@ -35,29 +34,36 @@
                     box-shadow: rgba(0, 0, 0, 0.5) -1px 3px 8px 0px, 1px 3px 9px 0px rgba(0, 0, 0, 0.8);
                 }
             </style>
-            <div class="target top" onclick="gotoPage('/settings.html?=horror','top')">
+            <div class="target top" id="top-horror" onclick="gotoPage('/settings.html?=horror','top')">
                 <div id="border-top" class="border top">
                     <div>Settings</div>
                 </div>
             </div>
-            <div class="target bottom" onclick="gotoPage('/apps.html','bottom')">
+            <script>addElement("top-horror")</script>
+
+            <div class="target bottom" id="bottom-horror" onclick="gotoPage('/apps.html','bottom')">
                 <div id="border-bottom" class="border bottom">
                     <div>Search Apps</div>
                 </div>
             </div>
-            <div class="target right" onclick="gotoPage('/scifi.html','right')">
+            <script>addElement("bottom-horror")</script>
+
+            <div class="target right" id="right-horror" onclick="gotoPage('/scifi.html','right')">
                 <div id="border-right" class="border right">
                     <div>Sci-fi</div>
                 </div>
             </div>
-            <div class="target left" onclick="gotoPage('/drama.html','left')">
+            <script>addElement("right-horror")</script>
+
+            <div class="target left" id="left-horror" onclick="gotoPage('/drama.html','left')">
                 <div id="border-left" class="border left">
-                    <div>Thriller</div>
+                    <div>Drama</div>
                 </div>
             </div>
+            <script>addElement("left-horror")</script>
 
 
-            <div class="film" style="top:440px;left:500px;">
+            <div class="film hover" id="dracula" style="top:440px;left:500px;">
                 <img src="film/horor/078bb286fcac448576255be6ebee0957.jpg">
                 <div class="text">
                     <h2 class="sub-text">Scars of Dracula</h2>
@@ -65,8 +71,9 @@
                     <p class="sub-text stars" style="margin: 0;">1979 &nbsp;•&nbsp; &#9733;&#9733;&#9733;&#9733;&#9734;</p>
                 </div>
             </div>
+            <script>addElement("dracula")</script>
 
-            <div class="film" style="top:280px;left:50px;">
+            <div class="film" id="carrie" style="top:280px;left:50px;">
                 <img src="film/horor/20cb164c3d2cb6509d0c427b4781b5bf--sissy-spacek-scary-movies.jpg">
                 <div class="text">
                     <h2 class="sub-text">Carrie</h2>
@@ -74,8 +81,11 @@
                     <p class="sub-text stars" style="margin: 0;">1957 &nbsp;•&nbsp; &#9733;&#9733;&#9733;&#9733;&#9733;</p>
                 </div>
             </div>
+            <script>
+                addElement("carrie")
+            </script>
 
-            <div class="film" style="top:40px;left:440px;">
+            <div class="film" id="lambs" style="top:40px;left:440px;">
                 <img src="film/horor/6732c5271a675f0be6a64a5b07a6cbc4.jpg">
                 <div class="text">
                     <h2 class="sub-text">Silence of the Lambs</h2>
@@ -83,8 +93,9 @@
                     <p class="sub-text stars" style="margin: 0;">1958 &nbsp;•&nbsp; &#9733;&#9733;&#9733;&#9734;&#9734;</p>
                 </div>
             </div>
+            <script>addElement("lambs")</script>
 
-            <div class="film" style="top:80px;left:920px;">
+            <div class="film" id="hereditary" style="top:80px;left:920px;">
                 <img src="film/horor/Ruth_Hereditary_Lg_1024x1024.jpg">
                 <div class="text">
                     <h2 class="sub-text">Hereditary</h2>
@@ -92,8 +103,9 @@
                     <p class="sub-text stars" style="margin: 0;">2012 &nbsp;•&nbsp; &#9733;&#9733;&#9733;&#9734;&#9734;</p>
                 </div>
             </div>
+            <script>addElement("hereditary")</script>
 
-            <div class="film" style="top:400px;left:970px;">
+            <div class="film" id="shining" style="top:400px;left:970px;">
                 <img src="film/horor/saul-bass-the-shining-film-poster-final.jpg">
                 <div class="text">
                     <h2 class="sub-text">The Shining</h2>
@@ -101,8 +113,8 @@
                     <p class="sub-text stars" style="margin: 0;">1994 &nbsp;•&nbsp; &#9733;&#9733;&#9733;&#9733;&#9734;</p>
                 </div>
             </div>
-            
         </div> <!-- end of content -->
+        <script>addElement("shining")</script>
         
         <div id="brightness"></div>
         
