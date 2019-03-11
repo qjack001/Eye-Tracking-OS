@@ -1,6 +1,8 @@
+var opacity = 0.1;
+
 function gotoPage(url, dir)
 {
-    url = "/Eye-Tracking-OS" + url; //for testing on github
+    //url = "/Eye-Tracking-OS" + url; //for testing on github
     var client = new XMLHttpRequest();
     client.open('GET', url);
     
@@ -40,4 +42,35 @@ function getUrlParam(parameter, defaultvalue)
         urlparameter = getUrlVars()[parameter];
     }
     return urlparameter;
+}
+
+function increaseBrightness()
+{
+    if(opacity >= 0.1)
+    {
+        opacity = opacity - 0.1;
+        document.getElementById("brightness").style.opacity = opacity;
+    }
+}
+
+function decreaseBrightness()
+{
+    if(opacity < 0.7)
+    {
+        opacity = opacity + 0.1;
+        document.getElementById("brightness").style.opacity = opacity;
+    }
+}
+
+function playPause()
+{
+    var vid = document.getElementById("video");
+    if((vid.currentTime < 0.1) || vid.paused || vid.ended || (vid.readyState < 3))
+    {
+        vid.play();
+    }
+    else
+    {
+        vid.pause();
+    }
 }
