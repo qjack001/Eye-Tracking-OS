@@ -1,4 +1,13 @@
 var opacity = 0.1;
+var caliShow = false;
+
+document.addEventListener('keydown', function(event) 
+{
+    if(event.keyCode == 67) 
+    {
+        toggleCalibrator();
+    }
+});
 
 function gotoPage(url, dir)
 {
@@ -114,4 +123,24 @@ function playMovie(url, film)
         }, 1000);
     }
     client.send();
+}
+
+function toggleCalibrator()
+{
+    if(caliShow)
+    {
+        document.getElementById("calibrator").className = " ";
+        //document.getElementById("webgazerVideoFeed").className = " ";
+        //document.getElementById("webgazerFaceOverlay").className = " ";
+        //document.getElementById("webgazerFaceFeedbackBox").className = " ";
+        caliShow = false;
+    }
+    else
+    {
+        document.getElementById("calibrator").className = "show";
+        //document.getElementById("webgazerVideoFeed").className = "show";
+        //document.getElementById("webgazerFaceOverlay").className = "show";
+        //document.getElementById("webgazerFaceFeedbackBox").className = "show";
+        caliShow = true;
+    }
 }
