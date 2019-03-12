@@ -500,8 +500,6 @@ div.border.transition
     transition: background-image 0.3s linear;
 }
 
-
-
 .static-border-right
 {
     position: fixed;
@@ -532,11 +530,18 @@ div.border.transition
     animation-delay: 0.5s, 0s;
 }
 
-.tutorial {
+.tutorial 
+{
     text-align: center;
     height: 30%; 
     padding: 20px;
     margin: 20px;
+}
+
+.sub-text .material-icons
+{
+    font-size: 14px;
+    transform: translateY(2px);
 }
 
 @keyframes film-in
