@@ -1,3 +1,28 @@
+@font-face
+{
+    font-family: "title";
+    src: url(/Fonts/title.ttf);
+}
+
+@font-face
+{
+    font-family: "ui";
+    src: url(/Fonts/ui.ttf);
+}
+
+@font-face
+{
+    font-family: "body";
+    src: url(/Fonts/body.ttf);
+}
+
+@font-face
+{
+    font-family: "body";
+    src: url(/Fonts/body-italic.ttf);
+    font-style: italic;
+}
+
 html
 {
     background-color: var(--border);
