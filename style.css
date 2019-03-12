@@ -549,9 +549,27 @@ div.border.transition
 }
 
 #eyebutton {
-    height: 50px; 
-    width: 100px; 
+    height: 167px; 
+    width: 400px; 
+    background-image: url("assets/EyeButton.jpg");
+    background-size: contain; 
+    background-repeat: no-repeat; 
 }
+
+@keyframes bloodshot
+{
+    0%
+    {
+        background-image: "assets/ClickedEyeButton.jpg";
+
+    }
+
+    100%
+    {
+        background-image: "assets/EyeButton.jpg";
+    }
+}
+
 
 .tutorial-button {
     background:none;
