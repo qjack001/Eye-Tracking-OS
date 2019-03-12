@@ -4,7 +4,7 @@
         <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, shrink-to-fit=no'>
         <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        
+
         <title>D-5:30 | Movies > Science Fiction</title>
         <link rel="stylesheet" type="text/css" href="./style.css" />
         <meta name="author" content="Maxwell Keleher" />
@@ -12,7 +12,7 @@
         <script type="text/javascript" src="script.js"></script>
         <script type="text/javascript" src="main.js"></script>
     </head>
-    
+
     <body>
         <div id="content">
             <style>
@@ -46,9 +46,9 @@
                     <div>Settings</div>
                 </div>
             </div>
-            <div class="target bottom" onclick="gotoPage('/apps.html')">
+            <div class="target bottom" onclick="gotoPage('/apps.html', 'bottom')">
                 <div class="border bottom">
-                    <div>Search Apps</div>
+                    <div>Click Here</div>
                 </div>
             </div>
             <div class="target right">
@@ -59,36 +59,42 @@
                 <div class="static-border-left">
                 </div>
             </div>
-            <div class="tutorial"> 
-                <h1>Tutorial</h1>
-                <p><b>Calibrating:</b> To set up the eye tracking navigation, you need to look at the mouse cursor while clicking. This can be accomplished in the calibration window which can be entered by pressing [Calibration Button]<br>
 
+            <div class="tutorial">
+                <h1>Tutorial</h1>
+                <p><b>Calibrating:</b> To set up the eye tracking navigation, you need to look at the mouse cursor while clicking. This can be accomplished in the calibration window which can be entered by pressing the 'C' key<br>
                     <b>Clicking:</b> Clicking simply requires you to press the Spacebar<br>
                     You can practive clicking with the button below <br>
-
                     <b>Navigation:</b> Setting are accessed via the top edge. You can search with the bottom edge. The left and right edges let you cycle throuhg the genres <br>
                     <br>You can practive clicking with the button below <br>
                 </p>
-                <img id="eyebutton" type="image" src="assets/EyeButton.jpg"></img>
-            
-            </div>
-            <div id="testbutton" class="testbutton hover">
-                    <p>Test Button</p>
-            </div>
-            <script>
-                    addToMap("testbutton",function(){
-                        document.getElementById("eyebutton").src = "assets/ClickedEyeButton.jpg";
-                    });
-                    addElement("testbutton");
-            </script>
-            
-            
+                <div id="eyebutton"></div>
+                <script>
+                    var btn = document.getElementById("eyebutton");
+                    btn.onclick = function(){
+                        var mydiv = document.getElementById("eyebutton")   ;
+                        mydiv.style.backgroundImage = "url('assets/ClickedEyeButton.png')";
+                        setTimeout(function(){
+                            mydiv.style.backgroundImage = "url('assets/EyeButton.png')";
+                        }, 600);
+                    }
 
-            
+                </script> 
+
+                <p>When you are ready look at and then click the bottom border.</p>
+            </div>
+
+            <script>
+                    addToMap("eyebutton",function(){
+                        alert("Button Pressed");
+                    });
+//                    addElement("eyebutton");
+            </script>
+
         </div> <!-- end of content -->
-        
+
         <div id="brightness"></div>
-        
+
         <div id="calibrator">
             <div class="cali-bttn"></div>
             <div class="cali-bttn"></div>

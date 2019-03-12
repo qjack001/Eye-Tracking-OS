@@ -131,12 +131,12 @@ body
     {
         opacity: 0;
     }
-    
+
     99%
     {
         opacity: 0;
     }
-    
+
     100%
     {
         opacity: 1;
@@ -260,7 +260,7 @@ div.border.transition
 
 .film .stars
 {
-    animation-delay: 0.3s !important; 
+    animation-delay: 0.3s !important;
     animation-duration: 0.8s !important;
     color: var(--star-color) !important;
 }
@@ -298,35 +298,35 @@ div.border.transition
     animation-fill-mode: forwards;
 }
 
-#content.transition-top div.film, #content.transition-top div.setting-container 
+#content.transition-top div.film, #content.transition-top div.setting-container
 {
     transform: translateY(200px);
     opacity: 0.4;
     transition: all 0.6s ease;
 }
 
-#content.transition-right div.film, #content.transition-right div.setting-container 
+#content.transition-right div.film, #content.transition-right div.setting-container
 {
     transform: translateX(-200px);
     opacity: 0.4;
     transition: all 0.6s ease;
 }
 
-#content.transition-bottom div.film, #content.transition-bottom div.setting-container 
+#content.transition-bottom div.film, #content.transition-bottom div.setting-container
 {
     transform: translateY(-200px);
     opacity: 0.4;
     transition: all 0.6s ease;
 }
 
-#content.transition-left div.film, #content.transition-left div.setting-container 
+#content.transition-left div.film, #content.transition-left div.setting-container
 {
     transform: translateX(200px);
     opacity: 0.4;
     transition: all 0.6s ease;
 }
 
-#content.transition-top.in div.film, #content.transition-top.in div.setting-container 
+#content.transition-top.in div.film, #content.transition-top.in div.setting-container
 {
     transform: translateY(-100px);
     opacity: 0;
@@ -334,7 +334,7 @@ div.border.transition
     animation-fill-mode: forwards;
 }
 
-#content.transition-right.in div.film, #content.transition-right.in div.setting-container 
+#content.transition-right.in div.film, #content.transition-right.in div.setting-container
 {
     transform: translateX(100px);
     opacity: 0;
@@ -342,7 +342,7 @@ div.border.transition
     animation-fill-mode: forwards;
 }
 
-#content.transition-bottom.in div.film, #content.transition-bottom.in div.setting-container 
+#content.transition-bottom.in div.film, #content.transition-bottom.in div.setting-container
 {
     transform: translateY(100px);
     opacity: 0;
@@ -350,7 +350,7 @@ div.border.transition
     animation-fill-mode: forwards;
 }
 
-#content.transition-left.in div.film, #content.transition-left.in div.setting-container 
+#content.transition-left.in div.film, #content.transition-left.in div.setting-container
 {
     transform: translateX(-100px);
     opacity: 0;
@@ -360,14 +360,14 @@ div.border.transition
 
 #play-icon
 {
-    width: 50px; 
-    height: 50px; 
-    pointer-events: none; 
-    position: absolute; 
-    background-color: rgba(0, 0, 0, 0.8); 
-    top: calc(50% - 45px); 
-    left: calc(50% - 45px); 
-    border-radius: 100%; 
+    width: 50px;
+    height: 50px;
+    pointer-events: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    top: calc(50% - 45px);
+    left: calc(50% - 45px);
+    border-radius: 100%;
     padding: 20px;
     opacity: 0;
     transform: scale(2);
@@ -393,7 +393,7 @@ div.border.transition
 
 .sub-text.c
 {
-    animation-delay: 0.24s !important; 
+    animation-delay: 0.24s !important;
     animation-duration: 0.7s !important;
 }
 
@@ -492,11 +492,15 @@ div.border.transition
     animation: pulse 1s infinite;
 }
 
-.eyebutton 
+#eyebutton
 {
-    height: 50px; 
-    width: 100px; 
+    height: 167px;
+    width: 400px;
+    background-image: url(assets/EyeButton.png); 
+    transition: background-image 0.3s linear;
 }
+
+
 
 .static-border-right
 {
@@ -532,8 +536,8 @@ div.border.transition
     text-align: center;
     height: 30%; 
     padding: 20px;
-    margin: 20px; 
-} 
+    margin: 20px;
+}
 
 @keyframes film-in
 {
@@ -544,7 +548,7 @@ div.border.transition
     }
 }
 
-@keyframes pulse 
+@keyframes pulse
 {
     0% {box-shadow: 0 0 0 0 var(--background);background-color: var(--background);}
     70% {box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);background-color: var(--foreground-color);}
