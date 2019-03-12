@@ -1,25 +1,25 @@
 @font-face
 {
     font-family: "title";
-    src: url(/Fonts/title.ttf);
+    src: url(/Eye-Tracking-OS/Fonts/title.ttf); /*for github testing*/
 }
 
 @font-face
 {
     font-family: "ui";
-    src: url(/Fonts/ui.ttf);
+    src: url(/Eye-Tracking-OS/Fonts/ui.ttf); /*for github testing*/
 }
 
 @font-face
 {
     font-family: "body";
-    src: url(/Fonts/body.ttf);
+    src: url(/Eye-Tracking-OS/Fonts/body.ttf); /*for github testing*/
 }
 
 @font-face
 {
     font-family: "body";
-    src: url(/Fonts/body-italic.ttf);
+    src: url(/Eye-Tracking-OS/Fonts/body-italic.ttf); /*for github testing*/
     font-style: italic;
 }
 
