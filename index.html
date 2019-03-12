@@ -4,7 +4,7 @@
         <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, shrink-to-fit=no'>
         <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        
+
         <title>D-5:30 | Movies > Science Fiction</title>
         <link rel="stylesheet" type="text/css" href="./style.css" />
         <meta name="author" content="Maxwell Keleher" />
@@ -12,7 +12,7 @@
         <script type="text/javascript" src="script.js"></script>
         <script type="text/javascript" src="main.js"></script>
     </head>
-    
+
     <body>
         <div id="content">
             <style>
@@ -35,7 +35,7 @@
                 {
                     box-shadow: rgba(0, 0, 0, 0.5) -1px 3px 8px 0px, 1px 3px 9px 0px rgba(0, 0, 0, 0.8);
                 }
-                
+
                 .testbutton
                 {
                     text-align: center;
@@ -59,8 +59,8 @@
                 <div class="static-border-left">
                 </div>
             </div>
-            
-            <div class="tutorial"> 
+
+            <div class="tutorial">
                 <h1>Tutorial</h1>
                 <p><b>Calibrating:</b> To set up the eye tracking navigation, you need to look at the mouse cursor while clicking. This can be accomplished in the calibration window which can be entered by pressing [Calibration Button]<br>
                     <b>Clicking:</b> Clicking simply requires you to press the Spacebar<br>
@@ -69,26 +69,26 @@
                     <br>You can practive clicking with the button below <br>
                 </p>
                 <div id="eyebutton" onclick="myFunction()"></div>
-                <script> 
+                <!-- <script>
                 function myFunction() {
                     document.getElementById("eyebutton").src = "assets/ClickedEyeButton.jpg";
                 }
-                </script>
+                </script> -->
 
                 <p>When you are ready look at and then click the bottom border.</p>
             </div>
-            
+
             <script>
                     addToMap("eyebutton",function(){
                         alert("Button Pressed");
                     });
                     addElement("testbutton");
             </script>
-            
+
         </div> <!-- end of content -->
-        
+
         <div id="brightness"></div>
-        
+
         <div id="calibrator">
             <div class="cali-bttn"></div>
             <div class="cali-bttn"></div>

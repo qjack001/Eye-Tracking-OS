@@ -52,11 +52,18 @@
             </div>
             <script>addElement("left-video")</script>
             
-            <video height="100%" width="100%" id="video" autoplay="autoplay" style="pointer-events: none;">
-                <source src="/assets/Tasty%20Cheese.mp4" type="video/mp4">
+            <video height="100%" width="100%" id="video" autoplay="autoplay" style="pointer-events: none; min-height: 100%; min-width: 100%; object-fit: cover;">
+                <source src="https://guinane.xyz/Eye-Tracking-OS/assets/Tasty%20Cheese.mp4" type="video/mp4"><!--for github testing-->
             </video>
             
             <div style="width: calc(100% - 100px); top: 50px; left: 50px; position: absolute; height: calc(100% - 100px);" onclick="playPause()"></div>
+            <div id="play-icon">
+                <i class="material-icons" style="line-height: 50px; color: #fff; font-size: 48px;">
+                    play_arrow
+                </i>
+            </div>
+            
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
             
         </div> <!-- end of content -->
         
