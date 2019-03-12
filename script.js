@@ -133,6 +133,7 @@ function toggleCalibrator()
         //document.getElementById("webgazerVideoFeed").className = " ";
         //document.getElementById("webgazerFaceOverlay").className = " ";
         //document.getElementById("webgazerFaceFeedbackBox").className = " ";
+        //uncomment and turn off mouse events here
         caliShow = false;
     }
     else
@@ -141,6 +142,7 @@ function toggleCalibrator()
         //document.getElementById("webgazerVideoFeed").className = "show";
         //document.getElementById("webgazerFaceOverlay").className = "show";
         //document.getElementById("webgazerFaceFeedbackBox").className = "show";
+        //uncomment and turn on mouse events here
         caliShow = true;
     }
 }
