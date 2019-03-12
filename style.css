@@ -492,11 +492,15 @@ div.border.transition
     animation: pulse 1s infinite;
 }
 
-.eyebutton
+#eyebutton
 {
-    height: 50px;
-    width: 100px;
+    height: 167px;
+    width: 400px;
+    background-image: url(assets/EyeButton.png); 
+    transition: background-image 0.3s linear;
 }
+
+
 
 .static-border-right
 {
