@@ -1,3 +1,28 @@
+@font-face
+{
+    font-family: "title";
+    src: url(/Eye-Tracking-OS/Fonts/title.ttf); /*for github testing*/
+}
+
+@font-face
+{
+    font-family: "ui";
+    src: url(/Eye-Tracking-OS/Fonts/ui.ttf); /*for github testing*/
+}
+
+@font-face
+{
+    font-family: "body";
+    src: url(/Eye-Tracking-OS/Fonts/body.ttf); /*for github testing*/
+}
+
+@font-face
+{
+    font-family: "body";
+    src: url(/Eye-Tracking-OS/Fonts/body-italic.ttf); /*for github testing*/
+    font-style: italic;
+}
+
 html
 {
     background-color: var(--border);
@@ -74,7 +99,7 @@ body
     line-height: 50px;
     position: absolute;
     transition: all 0.2s ease;
-    font-family: "Styrene B";
+    font-family: "ui";
     letter-spacing: 0.5px;
     font-size: 0.9rem;
 }
@@ -192,6 +217,7 @@ div.border.transition
     max-width: 150px;
     min-width: 150px;
     height: 225px;
+    max-height: 225px;
     overflow: hidden;
     transition: min-width 0.1s linear 0.4s;
 }
@@ -219,13 +245,13 @@ div.border.transition
 {
     font-size: 20px;
     margin-bottom: 0;
-    font-family: "Recoleta";
+    font-family: "title";
     color: var(--foreground-color);
 }
 
 .film p
 {
-    font-family: "Apercu";
+    font-family: "body";
     font-size: 12px;
     line-height: 1.2rem;
     text-align: justify;
@@ -332,9 +358,32 @@ div.border.transition
     animation-fill-mode: forwards;
 }
 
+#play-icon
+{
+    width: 50px; 
+    height: 50px; 
+    pointer-events: none; 
+    position: absolute; 
+    background-color: rgba(0, 0, 0, 0.8); 
+    top: calc(50% - 45px); 
+    left: calc(50% - 45px); 
+    border-radius: 100%; 
+    padding: 20px;
+    opacity: 0;
+    transform: scale(2);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+#play-icon.show
+{
+    transform: scale(1);
+    opacity: 1;
+    transition: opacity 0.1s ease-in, transform 0s linear;
+}
+
 .sub-text.a
 {
-    animation-delay: 0.1s !important;   
+    animation-delay: 0.1s !important;
 }
 
 .sub-text.b
@@ -377,7 +426,7 @@ div.border.transition
     transform: scale(1.1);
 }
 
-.material-icons
+.setting-option .material-icons
 {
     font-size: 60px !important;
     line-height: 190px !important;
@@ -395,7 +444,7 @@ div.border.transition
     width: 100%;
     text-align: center;
     line-height: 200px;
-    font-family: "Styrene B";
+    font-family: "ui";
     font-size: 20px;
     color: var(--foreground);
 }
@@ -442,6 +491,49 @@ div.border.transition
     border-color: var(--foreground-color);
     animation: pulse 1s infinite;
 }
+
+.eyebutton 
+{
+    height: 50px; 
+    width: 100px; 
+}
+
+.static-border-right
+{
+    position: fixed;
+    background-color: var(--border);
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+    color: var(--foreground);
+    top: 0;
+    right: 0;
+    height: 100% !important;
+    animation: border-in-vert 0.4s ease-in, border-opac 0.5s linear;
+    animation-delay: 0.5s, 0s;
+}
+
+.static-border-left
+{
+    position: fixed;
+    background-color: var(--border);
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+    color: var(--foreground);
+    top: 0;
+    left: 0;
+    height: 100% !important;
+    animation: border-in-vert 0.4s ease-in, border-opac 0.5s linear;
+    animation-delay: 0.5s, 0s;
+}
+
+.tutorial {
+    text-align: center;
+    height: 30%; 
+    padding: 20px;
+    margin: 20px; 
+} 
 
 @keyframes film-in
 {
@@ -508,54 +600,4 @@ div.border.transition
 {
     background: rgba(255, 192, 203, 0.6) !important;
     border: 2px dashed red !important;
-}
-
-.static-border-right
-{
-    position: fixed;
-    background-color: var(--border);
-    width: 20px;
-    height: 20px;
-    overflow: hidden;
-    color: var(--foreground);
-    top: 0;
-    right: 0;
-    height: 100% !important;
-    animation: border-in-vert 0.4s ease-in, border-opac 0.5s linear;
-    animation-delay: 0.5s, 0s;
-}
-
-.static-border-left
-{
-    position: fixed;
-    background-color: var(--border);
-    width: 20px;
-    height: 20px;
-    overflow: hidden;
-    color: var(--foreground);
-    top: 0;
-    left: 0;
-    height: 100% !important;
-    animation: border-in-vert 0.4s ease-in, border-opac 0.5s linear;
-    animation-delay: 0.5s, 0s;
-}
-
-.tutorial {
-    text-align: center;
-    height: 30%; 
-    padding: 20px;
-    margin: 20px; 
-    
-}
-
-#eyebutton {
-    height: 50px; 
-    width: 100px; 
-}
-
-.tutorial-button {
-    background:none;
-    border:none;
-    margin:0;
-    padding:0;
 }
