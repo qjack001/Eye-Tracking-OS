@@ -93,7 +93,7 @@ function skipBack()
 
 function playMovie(url, film)
 {
-    //url = "/Eye-Tracking-OS" + url; //for testing on github
+    url = "/Eye-Tracking-OS" + url; //for testing on github
     var client = new XMLHttpRequest();
     client.open('GET', url);
     
