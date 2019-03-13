@@ -5,7 +5,7 @@
         <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
         
-        <title>D-5:30 | General > Settings</title>
+        <title>D-5:30 | General > Apps</title>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="./style.css" />
         <meta name="author" content="Jack Guinane" />
@@ -30,15 +30,35 @@
             
             
             
-            <div class="app" style="border-radius: 100%; width: 200px; margin-left: calc(50% - 100px);
-                    transition: all 0.3s ease;" onclick="gotoPage('/drama.html','top')">
-                <img src="https://guinane.xyz/Eye-Tracking-OS/assets/movies-logo.png" style="width: 200px;">
+            <div class="app" style="border-radius: 100%; width: 200px; margin-left: calc(50% - 100px); transition: all 0.3s ease;" onclick="gotoPage('/drama.html','top')">
+                <img src="/assets/movies-logo.png" style="width: 200px;">
+                <div class="setting-title movie-title" style="position:absolute;"><span class="app-letter" style="transition-delay: 0.0s;">M</span><span class="app-letter" style="transition-delay: 0.02s;">o</span><span class="app-letter" style="transition-delay: 0.05s;">v</span><span class="app-letter" style="transition-delay: 0.08s;">i</span><span class="app-letter" style="transition-delay: 0.12s; transition-duration: 0.25s;">e</span><span class="app-letter" style="transition-delay: 0.17s; transition-duration: 0.3s;">z</span></div>
             </div>
-            <div class="setting-title">Moviez</div>
             <style>
                 .app:hover
                 {
                     background: var(--border);
+                }
+                
+                .movie-title
+                {
+                    width: 200px;
+                    font-size: 30px;
+                    text-transform: uppercase;
+                }
+                
+                .app-letter
+                {
+                    transform: translateY(-120px); 
+                    opacity: 0;
+                    transition: all 0.2s ease;
+                    display: inline-block;
+                }
+                
+                .app:hover .app-letter
+                {
+                    transform: translateY(-90px); 
+                    opacity: 1;
                 }
             </style>
 
