@@ -25,44 +25,19 @@
                     --star-color: rgb(93, 156, 114);
                 }
             </style>
+            
+            <div class="target top" onclick="gotoPage('/settings.html?=apps','top')">
+                <div id="border-top" class="border top">
+                    <div>Settings</div>
+                </div>
+            </div>
 
             <div style="height: calc(50% - 270px)"></div>
             
-            
-            
-            <div class="app" style="border-radius: 100%; width: 200px; margin-left: calc(50% - 100px); transition: all 0.3s ease;" onclick="gotoPage('/drama.html','top')">
+            <div id="moviez" class="app" onclick="gotoPage('/drama.html','top')">
                 <img src="/assets/movies-logo.png" style="width: 200px;">
-                <div class="setting-title movie-title" style="position:absolute;"><span class="app-letter" style="transition-delay: 0.0s;">M</span><span class="app-letter" style="transition-delay: 0.02s;">o</span><span class="app-letter" style="transition-delay: 0.05s;">v</span><span class="app-letter" style="transition-delay: 0.08s;">i</span><span class="app-letter" style="transition-delay: 0.12s; transition-duration: 0.25s;">e</span><span class="app-letter" style="transition-delay: 0.17s; transition-duration: 0.3s;">z</span></div>
+                <div class="setting-title movie-title"><span class="app-letter" style="transition-delay: 0.0s;">M</span><span class="app-letter" style="transition-delay: 0.02s;">o</span><span class="app-letter" style="transition-delay: 0.05s;">v</span><span class="app-letter" style="transition-delay: 0.08s;">i</span><span class="app-letter" style="transition-delay: 0.12s; transition-duration: 0.25s;">e</span><span class="app-letter" style="transition-delay: 0.17s; transition-duration: 0.3s;">z</span></div>
             </div>
-            <style>
-                .app:hover
-                {
-                    background: var(--border);
-                }
-                
-                .movie-title
-                {
-                    width: 200px;
-                    font-size: 30px;
-                    text-transform: uppercase;
-                }
-                
-                .app-letter
-                {
-                    transform: translateY(-120px); 
-                    opacity: 0;
-                    transition: all 0.2s ease;
-                    display: inline-block;
-                }
-                
-                .app:hover .app-letter
-                {
-                    transform: translateY(-90px); 
-                    opacity: 1;
-                }
-            </style>
-
-            
         </div> <!-- end of content -->
         
         <div id="brightness"></div>

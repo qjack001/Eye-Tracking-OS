@@ -298,35 +298,35 @@ div.border.transition
     animation-fill-mode: forwards;
 }
 
-#content.transition-top div.film, #content.transition-top div.setting-container
+#content.transition-top div.film, #content.transition-top div.setting-container, #content.transition-top div.app
 {
     transform: translateY(200px);
     opacity: 0.4;
     transition: all 0.6s ease;
 }
 
-#content.transition-right div.film, #content.transition-right div.setting-container
+#content.transition-right div.film, #content.transition-right div.setting-container, #content.transition-right div.app
 {
     transform: translateX(-200px);
     opacity: 0.4;
     transition: all 0.6s ease;
 }
 
-#content.transition-bottom div.film, #content.transition-bottom div.setting-container
+#content.transition-bottom div.film, #content.transition-bottom div.setting-container, #content.transition-bottom div.app
 {
     transform: translateY(-200px);
     opacity: 0.4;
     transition: all 0.6s ease;
 }
 
-#content.transition-left div.film, #content.transition-left div.setting-container
+#content.transition-left div.film, #content.transition-left div.setting-container, #content.transition-left div.app
 {
     transform: translateX(200px);
     opacity: 0.4;
     transition: all 0.6s ease;
 }
 
-#content.transition-top.in div.film, #content.transition-top.in div.setting-container
+#content.transition-top.in div.film, #content.transition-top.in div.setting-container, #content.transition-top.in div.app
 {
     transform: translateY(-100px);
     opacity: 0;
@@ -334,7 +334,7 @@ div.border.transition
     animation-fill-mode: forwards;
 }
 
-#content.transition-right.in div.film, #content.transition-right.in div.setting-container
+#content.transition-right.in div.film, #content.transition-right.in div.setting-container, #content.transition-right.in div.app
 {
     transform: translateX(100px);
     opacity: 0;
@@ -342,7 +342,7 @@ div.border.transition
     animation-fill-mode: forwards;
 }
 
-#content.transition-bottom.in div.film, #content.transition-bottom.in div.setting-container
+#content.transition-bottom.in div.film, #content.transition-bottom.in div.setting-container, #content.transition-bottom.in div.app
 {
     transform: translateY(100px);
     opacity: 0;
@@ -350,7 +350,7 @@ div.border.transition
     animation-fill-mode: forwards;
 }
 
-#content.transition-left.in div.film, #content.transition-left.in div.setting-container
+#content.transition-left.in div.film, #content.transition-left.in div.setting-container, #content.transition-left.in div.app
 {
     transform: translateX(-100px);
     opacity: 0;
@@ -542,6 +542,41 @@ div.border.transition
 {
     font-size: 14px;
     transform: translateY(2px);
+}
+
+.app
+{
+    border-radius: 100%; 
+    width: 200px; 
+    margin-left: calc(50% - 100px); 
+    transition: all 0.3s ease;
+}
+
+.app:hover
+{
+    background: var(--border);
+}
+
+.movie-title
+{
+    width: 200px;
+    font-size: 30px;
+    text-transform: uppercase;
+    position: absolute;
+}
+
+.app-letter
+{
+    transform: translateY(-120px); 
+    opacity: 0;
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+.app:hover .app-letter
+{
+    transform: translateY(-90px); 
+    opacity: 1;
 }
 
 @keyframes film-in
