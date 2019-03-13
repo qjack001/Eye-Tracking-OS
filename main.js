@@ -224,6 +224,41 @@ function video()
     });
 }
 
+function tutorial(){
+    emptyList();
+    var btn = document.getElementById("eyebutton");
+    btn.onclick = function(){
+        var mydiv = document.getElementById("eyebutton")   ;
+        mydiv.style.backgroundImage = "url('assets/ClickedEyeButton.png')";
+        setTimeout(function(){
+            mydiv.style.backgroundImage = "url('assets/EyeButton.png')";
+        }, 600);
+    }
+
+    addElement("eyebutton");
+    addToMap("eyebutton",function(){
+        var mydiv = document.getElementById("eyebutton")   ;
+        mydiv.style.backgroundImage = "url('assets/ClickedEyeButton.png')";
+        setTimeout(function(){
+            mydiv.style.backgroundImage = "url('assets/EyeButton.png')";
+        }, 600);
+    });
+
+    addElement("tutorial-top");
+    addToMap("tutorial-top", function(){
+        gotoPage('/settings.html?=horror');
+    })
+
+    addElement("tutorial-bottom");
+    addToMap("tutorial-bottom", function(){
+        gotoPage('/apps.html', 'bottom');
+    })
+
+
+    
+
+}
+
 document.onkeypress = function(e) {
     if(e.key == ' ')
     {

@@ -17,6 +17,7 @@
 
     <body>
         <div id="content">
+            <img src = "/assets/1x1.png" onload="tutorial()">
             <style>
                 :root
                 {
@@ -43,12 +44,13 @@
                     text-align: center;
                 }
             </style>
-            <div class="target top" onclick="gotoPage('/settings.html?=horror')">
+            <div class="target top" id="tutorial-top" onclick="gotoPage('/settings.html?=horror')">
                 <div class="border top">
                     <div>Settings</div>
                 </div>
             </div>
-            <div class="target bottom" onclick="gotoPage('/apps.html', 'bottom')">
+
+            <div class="target bottom" id="tutorial-bottom" onclick="gotoPage('/apps.html', 'bottom')">
                 <div class="border bottom">
                     <div>Click Here</div>
                 </div>
@@ -71,27 +73,9 @@
                     <br>You can practive clicking with the button below <br>
                 </p>
                 <div id="eyebutton"></div>
-                <script>
-                    var btn = document.getElementById("eyebutton");
-                    btn.onclick = function(){
-                        var mydiv = document.getElementById("eyebutton")   ;
-                        mydiv.style.backgroundImage = "url('assets/ClickedEyeButton.png')";
-                        setTimeout(function(){
-                            mydiv.style.backgroundImage = "url('assets/EyeButton.png')";
-                        }, 600);
-                    }
-
-                </script> 
 
                 <p>When you are ready look at and then click the bottom border.</p>
             </div>
-
-            <script>
-                    addToMap("eyebutton",function(){
-                        alert("Button Pressed");
-                    });
-                   addElement("eyebutton");
-            </script>
 
         </div> <!-- end of content -->
 
