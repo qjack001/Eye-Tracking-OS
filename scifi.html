@@ -10,7 +10,10 @@
         <link rel="stylesheet" type="text/css" href="./style.css" />
         <meta name="author" content="Maxwell Keleher" />
         <link id="favicon" rel="shortcut icon" type="image/png" href="./favicon.png">
-        <script type="text/javascript" src="script.js"></script>
+        <script async type="text/javascript" src="./webgazer.js"></script>
+        <script  type="text/javascript" src="script.js"></script>
+        <script  type="text/javascript" src="main.js"></script>
+        <script  type="text/javascript" src="gazelistener.js"></script>
     </head>
     
     <body>
@@ -40,39 +43,34 @@
                     <div>Settings</div>
                 </div>
             </div>
-            <script>addElement("top-scifi")</script>
 
             <div class="target bottom" id="bottom-scifi" onclick="gotoPage('/apps.html','bottom')">
                 <div id="border-bottom" class="border bottom">
                     <div>Search Apps</div>
                 </div>
             </div>
-            <script>addElement("bottom-scifi")</script>
 
             <div class="target right" id="right-scifi" onclick="gotoPage('/drama.html','right')">
                 <div id="border-right" class="border right">
                     <div>Drama</div>
                 </div>
             </div>
-            <script>addElement("right-scifi")</script>
 
             <div class="target left" id="left-scifi" onclick="gotoPage('/horror.html','left')">
                 <div id="border-left" class="border left">
                     <div>Horror</div>
                 </div>
             </div>
-            <script>addElement("left-scifi")</script>
 
 
             <div class="film" id="wow" style="top:440px;left:500px;" onclick="playMovie('/video.html?=scifi','wow')">
-                <img id="wow-img" src="film/scifi/WarOfTheWorlds.jpg">
+                <img id="wow-img" src="film/scifi/WarOfTheWorlds.jpg" onload="scifi()">
                 <div class="text">
                     <h2 class="sub-text">War of The Worlds</h2>
                     <p><span class="sub-text a">Humanity DESTROYS alien threat</span><span class="sub-text b">with one simple disease. Click</span><span class="sub-text c">to find out how!</span></p>
                     <p class="sub-text stars" style="margin: 0;">1979 &nbsp;•&nbsp; <i class="material-icons material-icons--round"> star </i><i class="material-icons material-icons--round"> star </i><i class="material-icons material-icons--round"> star </i><i class="material-icons material-icons--round"> star_border </i><i class="material-icons material-icons--round"> star_border </i></p>
                 </div>
             </div>
-            <script>addElement("wow")</script>
 
             <div class="film" id="metro" style="top:402px;left:50px;" onclick="playMovie('/video.html?=scifi','metro')">
                 <img id="metro-img" src="film/scifi/Metropolis.PNG">
@@ -82,7 +80,6 @@
                     <p class="sub-text stars" style="margin: 0;">1957 &nbsp;•&nbsp; <i class="material-icons material-icons--round"> star </i><i class="material-icons material-icons--round"> star </i><i class="material-icons material-icons--round"> star </i><i class="material-icons material-icons--round"> star </i><i class="material-icons material-icons--round"> star_border </i></p>
                 </div>
             </div>
-            <script>addElement("metro")</script>
 
             <div class="film" id="matrix" style="top:40px;left:420px;" onclick="playMovie('/video.html?=scifi','matrix')">
                 <img id="matrix-img" src="film/scifi/TheMatrix.jpg">
@@ -92,7 +89,6 @@
                     <p class="sub-text stars" style="margin: 0;">2001 &nbsp;•&nbsp; <i class="material-icons material-icons--round"> star </i><i class="material-icons material-icons--round"> star </i><i class="material-icons material-icons--round"> star </i><i class="material-icons material-icons--round"> star </i><i class="material-icons material-icons--round"> star_border </i></p>
                 </div>
             </div>
-            <script>addElement("matrix")</script>
 
             <div class="film" id="island" style="top:380px;left:999px;" onclick="playMovie('/video.html?=scifi','island')">
                 <img id="island-img" src="film/scifi/TheIslandOfDrMoreau.jpg">
@@ -102,7 +98,6 @@
                     <p class="sub-text stars" style="margin: 0;">2012 &nbsp;•&nbsp; <i class="material-icons material-icons--round"> star </i><i class="material-icons material-icons--round"> star_border </i><i class="material-icons material-icons--round"> star_border </i><i class="material-icons material-icons--round"> star_border </i><i class="material-icons material-icons--round"> star_border </i></p>
                 </div>
             </div>
-            <script>addElement("island")</script>
 
             <div class="film" id="rpo" style="top:80px;left:870px;" onclick="playMovie('/video.html?=scifi','rpo')">
                 <img id="rpo-img" src="film/scifi/ReadyPlayerOne.jpg">
@@ -112,7 +107,6 @@
                     <p class="sub-text stars" style="margin: 0;">1994 &nbsp;•&nbsp; <i class="material-icons material-icons--round"> star </i><i class="material-icons material-icons--round"> star </i><i class="material-icons material-icons--round"> star </i><i class="material-icons material-icons--round"> star </i><i class="material-icons material-icons--round"> star </i></p>
                 </div>
             </div>
-            <script>addElement("rpo")</script>
             
         </div> <!-- end of content -->
         

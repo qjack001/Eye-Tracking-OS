@@ -10,7 +10,10 @@
         <link rel="stylesheet" type="text/css" href="./style.css" />
         <meta name="author" content="Jack Guinane" />
         <link id="favicon" rel="shortcut icon" type="image/png" href="./eye.png">
-        <script type="text/javascript" src="script.js"></script>
+        <script async type="text/javascript" src="./webgazer.js"></script>
+        <script  type="text/javascript" src="script.js"></script>
+        <script  type="text/javascript" src="main.js"></script>
+        <script  type="text/javascript" src="gazelistener.js"></script>
     </head>
     
     <body>
@@ -40,38 +43,33 @@
                     <div>Settings</div>
                 </div>
             </div>
-            <script>addElement("top-drama")</script>
 
             <div class="target bottom" id="bottom-drama" onclick="gotoPage('/apps.html','bottom')">
                 <div id="border-bottom" class="border bottom">
                     <div>Search Apps</div>
                 </div>
             </div>
-            <script>addElement("bottom-drama")</script>
-
+            
             <div class="target right" id="right-drama" onclick="gotoPage('/horror.html','right')">
                 <div id="border-right" class="border right">
                     <div>Horror</div>
                 </div>
             </div>
-            <script>addElement("right-drama")</script>
 
             <div class="target left" id="left-drama" onclick="gotoPage('/scifi.html','left')">
                 <div id="border-left" class="border left">
                     <div>Sci-fi</div>
                 </div>
             </div>
-            <script>addElement("left-drama")</script>
 
             <div class="film" id="apocolypse" style="top:400px;left:850px;" onclick="playMovie('/video.html?=drama','apocolypse')">
-                <img id="apocolypse-img" src="film/3.jpg">
+                <img id="apocolypse-img" src="film/3.jpg" onload="drama()">
                 <div class="text">
                     <h2 class="sub-text">Apocolypse Now</h2>
                     <p><span class="sub-text a">The cult-classic docuseries that</span><span class="sub-text b">dives deep into the heart of</span><span class="sub-text c">Vietnamese cuisine.</span></p>
                     <p class="sub-text stars" style="margin: 0;">1979 &nbsp;•&nbsp; <i class="material-icons material-icons--round"> star </i><i class="material-icons material-icons--round"> star </i><i class="material-icons material-icons--round"> star </i><i class="material-icons material-icons--round"> star </i><i class="material-icons material-icons--round"> star_border </i></p>
                 </div>
             </div>
-            <script>addElement("apocolypse")</script>
 
             <div class="film" id="angry" style="top:40px;left:40px;" onclick="playMovie('/video.html?=drama','angry')">
                 <img id="angry-img" src="film/7.jpeg">
@@ -81,7 +79,6 @@
                     <p class="sub-text stars" style="margin: 0;">1957 &nbsp;•&nbsp; <i class="material-icons material-icons--round"> star </i><i class="material-icons material-icons--round"> star </i><i class="material-icons material-icons--round"> star </i><i class="material-icons material-icons--round"> star </i><i class="material-icons material-icons--round"> star </i></p>
                 </div>
             </div>
-            <script>addElement("angry")</script>
 
             <div class="film" id="vertigo" style="top:130px;left:540px;" onclick="playMovie('/video.html?=drama','vertigo')">
                 <img id="vertigo-img" src="film/8.jpg">
@@ -91,7 +88,6 @@
                     <p class="sub-text stars" style="margin: 0;">1958 &nbsp;•&nbsp; <i class="material-icons material-icons--round"> star </i><i class="material-icons material-icons--round"> star </i><i class="material-icons material-icons--round"> star </i><i class="material-icons material-icons--round"> star_border </i><i class="material-icons material-icons--round"> star_border </i></p>
                 </div>
             </div>
-            <script>addElement("vertigo")</script>
 
             <div class="film" id="django" style="top:70px;left:950px;" onclick="playMovie('/video.html?=drama','django')">
                 <img id="django-img" src="film/6.png">
@@ -101,7 +97,6 @@
                     <p class="sub-text stars" style="margin: 0;">2012 &nbsp;•&nbsp; <i class="material-icons material-icons--round"> star </i><i class="material-icons material-icons--round"> star </i><i class="material-icons material-icons--round"> star </i><i class="material-icons material-icons--round"> star_border </i><i class="material-icons material-icons--round"> star_border </i></p>
                 </div>
             </div>
-            <script>addElement("django")</script>
 
             <div class="film" id="leon" style="top:450px;left:70px;" onclick="playMovie('/video.html?=drama','leon')">
                 <img id="leon-img" src="film/5.jpg">
@@ -112,7 +107,6 @@
                 </div>
             </div>
         </div> <!-- end of content -->
-        <script>addElement("leon")</script>
         
         <div id="brightness"></div>
         

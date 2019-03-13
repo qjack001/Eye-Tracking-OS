@@ -3,6 +3,9 @@ var hasBeenOver = []
 var hasLeft = new Set();
 var counter = 0;
 var buffer = 20;
+function emptyList(){
+    elements.length = 0;
+}
 function addElement(id){
     elements.push(id);
     

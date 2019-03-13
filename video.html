@@ -10,11 +10,15 @@
         <link rel="stylesheet" type="text/css" href="./style.css" />
         <meta name="author" content="Maxwell Keleher" />
         <link id="favicon" rel="shortcut icon" type="image/png" href="./favicon.png">
-        <script type="text/javascript" src="script.js"></script>
+        <script async type="text/javascript" src="./webgazer.js"></script>
+        <script  type="text/javascript" src="script.js"></script>
+        <script  type="text/javascript" src="main.js"></script>
+        <script  type="text/javascript" src="gazelistener.js"></script>
     </head>
     
     <body>
         <div id="content">
+            <img src = "/assets/1x1.png" onload="video()">
             <style>
                 :root
                 {
@@ -30,28 +34,24 @@
                     <div>Settings</div>
                 </div>
             </div>
-            <script>addElement("top-video")</script>
 
             <div class="target bottom" id="bottom-video" onclick="if(window.location.href.indexOf('?=') < 0){gotoPage('/drama.html','bottom');}else{gotoPage('/' + window.location.href.substring(window.location.href.indexOf('?=') + 2) + '.html','bottom');}">
                 <div id="border-bottom" class="border bottom">
                     <div>Exit</div>
                 </div>
             </div>
-            <script>addElement("bottom-video")</script>
 
             <div class="target right" id="right-video" onclick="skipForward()">
                 <div id="border-right" class="border right">
                     <div>Forward</div>
                 </div>
             </div>
-            <script>addElement("right-video")</script>
 
             <div class="target left" id="left-video" onclick="skipBack()">
                 <div id="border-left" class="border left">
                     <div>Rewind</div>
                 </div>
             </div>
-            <script>addElement("left-video")</script>
             
             <video height="100%" width="100%" id="video" autoplay="autoplay" style="pointer-events: none; min-height: 100%; min-width: 100%; object-fit: cover;">
                 <source src="https://guinane.xyz/Eye-Tracking-OS/assets/Tasty%20Cheese.mp4" type="video/mp4"><!--for github testing-->
