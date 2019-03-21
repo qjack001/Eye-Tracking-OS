@@ -83,6 +83,30 @@ function averagePoints(points)
     return [newx, newy];
 }
 
+// Draws an indicator showing where the user is looking
+function drawCursor()
+{
+    var eyeCursor = document.createElement("div");
+    eyeCursor.style.borderRadius = "100%";
+    eyeCursor.height = "50px";
+    eyeCursor.width = "50px";
+    eyeCursor.border = "solid 2px #fff";
+    eyeCursor.position = "absolute";
+    eyeCursor.zIndex = "9999";
+    eyeCursor.id = "eyeCursor";
+    eyeCursor.style.left = 0;
+    eyeCursor.style.top = 0;
+
+    document.body.appendChild(eyeCursor);
+}
+
+// Updates the eye cursor's coordinates
+function updateCursor(points)
+{
+    document.getElementById("eyeCursor").style.left = (points[0] - 25) + "px";
+    document.getElementById("eyeCursor").style.top = (points[1] - 25) + "px";
+}
+
 // Provides a better prediction of where the user is looking
 function betterPrediction()
 {
@@ -95,10 +119,12 @@ function betterPrediction()
         
         newCoords = averagePoints(locHistory)       // Take the average of all the points
 
+        updateCursor(newCoords);
+
         index = (index + 1) % numStoredPoints;      // Increment index (loops back to 0)
     }
 }
 
-
+window.onload(drawCursor);
 window.setInterval(betterPrediction, predictionTimer);
 window.setInterval(isOverListener, 200);
