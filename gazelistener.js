@@ -5,15 +5,14 @@ var counter = 0;
 var buffer = 20;
 function addElement(id){
     elements.push(id);
-    
 }
-console.log(elements);
+// console.log(elements);
 function isOverListener()
 {
     var prediction = webgazer.getCurrentPrediction();
     if (prediction) 
     {
-        console.log("hello");
+        console.log("hello 5");
         let x = prediction.x;
         let y = prediction.y;
         console.log("x:"+x);
@@ -63,11 +62,12 @@ function isOverListener()
     }
 }
 
-
-var numStoredPoints = 10;       // Amount of previous points the program takes into account
-var locHistory = [];            // Array that hold previous locations
+// Global Variables & Constants
+const predictionTimer = 200     // Interval of time in ms that the function is run
+const numStoredPoints = 10;     // Amount of previous points the program takes into account
+var locHistory = [];            // Array that holds previous locations
 var index = 0;                  // Index for locHistory
-var predictionTimer = 200       // Interval of time in ms that the function is run
+var cx, cy, vx, vy = 0;         // Cursor varaibles (update to class if necessary)
 
 // Takes array of points and returns the average.
 function averagePoints(points)
@@ -81,6 +81,23 @@ function averagePoints(points)
     newx = average[0] / points.length;
     newy = average[1] / points.length;
     return [newx, newy];
+}
+
+// Takes array of points, their average, and returns the standard deviation of X and Y.
+function standardDeviation(points, avg)
+{
+    temp = [0,0];
+
+    for (i = 0; i < points.length; i++)
+    {
+        temp[0] += (points[0] - avg) ** 2;
+        temp[1] += (points[1] - avg) ** 2;
+    }
+
+    sX = Math.sqrt(temp[0] / points.length);
+    sY = Math.sqrt(temp[1] / points.length);
+
+    return [sX, sY];
 }
 
 // Draws an indicator showing where the user is looking
@@ -98,28 +115,51 @@ function drawCursor()
     eyeCursor.style.top = 0;
 
     document.body.appendChild(eyeCursor);
+    console.log("CURSOR DRAWN!");
 }
 
 // Updates the eye cursor's coordinates
 function updateCursor(points)
 {
-    document.getElementById("eyeCursor").style.left = (points[0] - 25) + "px";
-    document.getElementById("eyeCursor").style.top = (points[1] - 25) + "px";
+    var acc = 50;               // Acceleration of the cursor
+    var maxVel = 500;           // Max speed at which the cursor can move
+    //vy = (points[0] - cy);
+    //vx = (points[1] - cx);
+
+    (points[0] > cy) ? (vy += 10): (vy -= acc);      // If looking higher than cursor, increase y vel, else decrease y vel
+    (points[1] > cx) ? (vx += 10): (vx -= acc);      // If looking righter than cursor, increase x vel, else decrease x vel
+
+    if (vy > maxVel) vy = maxVel;
+    if (vx > maxVel) vx = maxVel;
+
+    vy += vy
+    cx += vx
+
+    //document.getElementById("eyeCursor").style.left = (cy - 25) + "px";
+    //document.getElementById("eyeCursor").style.top = (cx - 25) + "px";
+    document.getElementById("eyeCursor").style.top = (points[0] - 25) + "px";
+    document.getElementById("eyeCursor").style.left = (points[1] - 25) + "px";
+    console.log("CURSOR UPDATED!");
 }
 
-// Provides a better prediction of where the user is looking
+// Provide a better prediction of where the user is looking & draw cursor
 function betterPrediction()
 {
+    console.log("INITIATE BETTER PREDICTION");
     var prediction = webgazer.getCurrentPrediction();
     if (prediction) 
     {
-        let x = prediction.x;
-        let y = prediction.y;
+        console.log("GO GO GO");
+        let x = prediction.x;                       // Webgazer x prediction
+        let y = prediction.y;                       // Webgazer y prediction
         locHistory[index] = [x,y];                  // Store coordinates in a list
         
         newCoords = averagePoints(locHistory)       // Take the average of all the points
 
-        updateCursor(newCoords);
+        circleSize = standardDeviation(locHistory, newCoords);      // Find standard deviation of points and adjust cursor size to fit
+        console.log(circleSize);                    // Delete this after
+
+        updateCursor(newCoords);                    // Adjust cursor to match new data
 
         index = (index + 1) % numStoredPoints;      // Increment index (loops back to 0)
     }
