@@ -222,6 +222,10 @@ function video()
     addToMap("left-video",function(){
         skipBack();
     });
+    addElement("play-icon");
+    addToMap("play-icon",function(){
+        playPause();
+    });
 }
 
 function tutorial(){

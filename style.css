@@ -38,7 +38,7 @@ body
 
 #webgazerGazeDot
 {
-    display: none !important;
+    opacity: 0 !important;
 }
 
 #webgazerVideoFeed, #webgazerFaceOverlay
@@ -58,6 +58,7 @@ body
 #webgazerVideoFeed.show, #webgazerFaceOverlay.show, #webgazerFaceFeedbackBox.show
 {
     display: block !important;
+    transform: scaleX(-1);
 }
 
 #brightness
@@ -77,8 +78,8 @@ body
 {
     position: fixed;
     background-color: var(--border);
-    width: 20px;
-    height: 20px;
+    width: 45px;
+    height: 45px;
     transition: all 0.2s ease-out;
     text-transform: uppercase;
     text-align: center;
@@ -86,17 +87,17 @@ body
     color: var(--foreground);
 }
 
-.target:hover .border
+.target.hover .border
 {
     transition: all 0.3s ease;
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
 }
 
 .border div
 {
     opacity: 0;
-    line-height: 50px;
+    line-height: 70px;
     position: absolute;
     transition: all 0.2s ease;
     font-family: "ui";
@@ -104,7 +105,7 @@ body
     font-size: 0.9rem;
 }
 
-.border:hover div
+.border.hover div
 {
     opacity: 0.7;
 }
@@ -195,8 +196,8 @@ body
 
 .target
 {
-    width: 45px;
-    height: 45px;
+    width: 70px;
+    height: 70px;
     outline: none;
     animation: none;
     position: absolute;
@@ -270,7 +271,7 @@ div.border.transition
     display: inline-block;
 }
 
-.film:hover
+.film.hover
 {
     z-index: 99;
     width: auto;
@@ -278,20 +279,20 @@ div.border.transition
     min-width: 400px;
 }
 
-.film:hover img
+.film.hover img
 {
     transform: scale(1.02);
     z-index: 100;
     position: relative;
 }
 
-.film:hover .text
+.film.hover .text
 {
     opacity: 1;
     visibility: visible;
 }
 
-.film:hover .sub-text
+.film.hover .sub-text
 {
     opacity: 0;
     animation: text-in 0.6s ease;
@@ -420,7 +421,7 @@ div.border.transition
     transition: all 0.5s ease;
 }
 
-.setting-option:hover
+.setting-option.hover
 {
     box-shadow: 0px 5px 17px 2px rgba(0, 0, 0, 0.25), 0px 2px 5px 0px rgba(0, 0, 0, 0.4);
     transform: scale(1.1);
@@ -434,7 +435,7 @@ div.border.transition
     transition: all 0.3s ease;
 }
 
-.setting-option:hover .material-icons
+.setting-option.hover .material-icons
 {
     color: var(--border) !important;
 }
@@ -486,7 +487,7 @@ div.border.transition
     place-self: center;
 }
 
-.cali-bttn:hover
+.cali-bttn.hover
 {
     border-color: var(--foreground-color);
     animation: pulse 1s infinite;
