@@ -263,6 +263,21 @@ function tutorial(){
 
 }
 
+function apps() {
+    emptyList();
+    addElement("moviez");
+    addToMap("moviez",function(){
+        gotoPage('/drama.html','top');
+    });
+
+    addElement("apps-top");
+    addToMap("apps-top",function(){
+        gotoPage('/settings.html?=apps','top')
+    })
+
+
+}
+
 document.onkeypress = function(e) {
     if(e.key == ' ')
     {
