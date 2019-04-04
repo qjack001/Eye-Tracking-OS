@@ -2,7 +2,7 @@ var elements = [];
 var hasBeenOver = []
 var hasLeft = new Set();
 var counter = 0;
-var buffer = 20;
+var buffer = 0;
 var radius = [0,0];
 const predictionTimer = 1;      // Interval of time in ms that the function is run
 const numStoredPoints = 7;     // Amount of previous points the program takes into account
@@ -26,6 +26,8 @@ function isOverListener()
     if (prediction) 
     {
         console.log("hello");
+        // let x = prediction.x;
+        // let y = prediction.y;
         
         hasBeenOver[counter] = null;
         elements.forEach(function(id){
@@ -45,8 +47,10 @@ function isOverListener()
             let right_side = cx + radius[0];
             let bottom_side = cy - radius[1];
             let top_side = cy + radius[1];
-            let inside = ((left < left_side && left_side < left + width) || (left < right_side && right_side > left + width)) && ((top < top_side && top_side < top + height) || (top < bottom_side && bottom_side < top + height));
+             let inside = ((left < left_side && left_side < left + width) || (left < right_side && right_side < left + width)) && ((top < top_side && top_side < top + height) || (top < bottom_side && bottom_side < top + height));
+            //let inside = x > left && y > top && y < top+height && x < left + width;
             //console.log(inside);
+            
             if(inside)
             {
                 if(hasBeenOver.includes(id))

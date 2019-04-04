@@ -7,16 +7,6 @@ document.addEventListener('keydown', function(event)
     {
         toggleCalibrator();
     }
-    if(event.key == 'd')
-    {
-        let opacity = window.getComputedStyle(document.getElementById("webgazerGazeDot")),opacity;
-        if(opacity == 1){
-            document.getElementById("webgazerGazeDot").style.opacity = "0 !important";
-        }
-        else {
-            document.getElementById("webgazerGazeDot").style.opacity = "1 !important";
-        }
-    }
 });
 
 function gotoPage(url, dir)
