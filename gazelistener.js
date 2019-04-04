@@ -68,8 +68,8 @@ function isOverListener()
 }
 
 // Global Variables & Constants
-const predictionTimer = 200;    // Interval of time in ms that the function is run
-const numStoredPoints = 10;     // Amount of previous points the program takes into account
+const predictionTimer = 1;      // Interval of time in ms that the function is run
+const numStoredPoints = 7;     // Amount of previous points the program takes into account
 var locHistory = [];            // Array that holds previous locations
 var index = 0;                  // Index for locHistory
 var cx, cy, vx, vy = 0;         // Cursor varaibles (update to class if necessary)
@@ -111,53 +111,86 @@ function drawCursor()
 {
     var eyeCursor = document.createElement("div");
     eyeCursor.style.borderRadius = "100%";
-    eyeCursor.height = "50px";
-    eyeCursor.width = "50px";
-    eyeCursor.border = "solid 10px #fff";
-    eyeCursor.position = "absolute";
-    eyeCursor.zIndex = "9999";
+    eyeCursor.style.height = "50px";
+    eyeCursor.style.width = "50px";
+    eyeCursor.style.border = "dashed 2px #fff";
+    eyeCursor.style.position = "absolute";
+    eyeCursor.style.zIndex = "9999";
     eyeCursor.id = "eyeCursor";
     eyeCursor.style.left = 0;
     eyeCursor.style.top = 0;
-
-    //eyeCursor.setAttribute("cx", 0);
-    //eyeCursor.setAttribute("cy", 0);
 
     document.body.appendChild(eyeCursor);
     console.log("CURSOR DRAWN!");
 }
 
 // Updates the eye cursor's coordinates
-function updateCursor(points)
+//var prevPosition = [0,0];
+//var vx, vy = 0;
+function updateCursor(point, circleSize)
 {
+    var minRadius = 100;
+    var radius = [0,0];
+    var eyeCursor = document.getElementById("eyeCursor");
+
     if (!CursorDrawn){          // Adds the cursor Element to the webpage
         drawCursor();
         CursorDrawn = true;
     }
 
-    var acc = 50;               // Acceleration of the cursor
-    var maxVel = 500;           // Max speed at which the cursor can move
-    //vy = (points[0] - cy);
-    //vx = (points[1] - cx);
+    // Radius Calculations
+    radius[0] = 14 * Math.sqrt(circleSize[0]);
+    radius[1] = 14 * Math.sqrt(circleSize[1]);
 
-    (points[0] > cy) ? (vy += 10): (vy -= acc);      // If looking higher than cursor, increase y vel, else decrease y vel
-    (points[1] > cx) ? (vx += 10): (vx -= acc);      // If looking righter than cursor, increase x vel, else decrease x vel
+    //console.log("Radius: "+radius);
 
-    if (vy > maxVel) vy = maxVel;
-    if (vx > maxVel) vx = maxVel;
+    if(radius[0] < minRadius){
+        radius[0] = minRadius;
+    }
+    if(radius[1] < minRadius){
+        radius[1] = minRadius;
+    }
 
-    cy += vy;
-    cx += vx;
+    eyeCursor.style.width = radius[0]+"px";
+    eyeCursor.style.height = radius[1]+"px";
 
-    //document.getElementById("eyeCursor").style.left = (cy - 25) + "px";
-    //document.getElementById("eyeCursor").style.top = (cx - 25) + "px";
+    cx = point[0] - radius[0];
+    cy = point[1] - radius[1];
 
-    var eyeCursor = document.getElementById("eyeCursor");
+    /*
+    var w = window.innerWidth;
+    var h = window.innerHeight;
 
-    eyeCursor.style.top = (points[0] - 25) + "px";
-    eyeCursor.style.left = (points[1] - 25) + "px";
+    console.log(cy);
+
+    if (cx < 0){
+        cx = 0;
+    }
+    else if (cx + radius[0] > w){
+        cx = w
+    }
+    if (cy < 0){
+        cy = 0;
+    }
+    else if (cy + radius[1] > h){
+        cy = h
+    }
+    */
+
+    eyeCursor.style.left = (cx) + "px";
+    eyeCursor.style.top = (cy) + "px";
+
     
-    //eyeCursor.setAttribute();
+    // Position Calculations
+    /*var acc = 10;
+    (point[0] > prevPosition[0]) ? (vx += acc): (vx -= acc);         // If looking righter than cursor, increase x vel, else decrease x vel
+    (point[1] > prevPosition[1]) ? (vy += acc): (vy -= acc);         // If looking higher than cursor, increase y vel, else decrease y vel
+
+
+    eyeCursor.style.left = (prevPosition[0] + vx - radius[0]) + "px";
+    eyeCursor.style.top = (prevPosition[1] + vy - radius[1]) + "px";
+    
+    prevPosition = point;*/
 }
 
 // Provide a better prediction of where the user is looking & draw cursor
@@ -174,11 +207,11 @@ function betterPrediction()
         
 
         circleSize = standardDeviation(locHistory, newCoords);      // Find standard deviation of points and adjust cursor size to fit
-        console.log("X "+x+" Y "+y);
-        console.log("Avg coords: "+newCoords);
-        console.log("SD: "+circleSize);
+        //console.log("X "+x+" Y "+y);
+        //console.log("Avg coords: "+newCoords);
+        //console.log("SD: "+circleSize);
 
-        updateCursor(newCoords);                    // Adjust cursor to match new data
+        updateCursor(newCoords, circleSize);                    // Adjust cursor to match new data
 
         index = (index + 1) % numStoredPoints;      // Increment index (loops back to 0)
     }
@@ -188,4 +221,4 @@ function betterPrediction()
 //  drawCursor();
 //};
 window.setInterval(isOverListener, 200);
-window.setInterval(betterPrediction, 200);
+window.setInterval(betterPrediction, predictionTimer);
