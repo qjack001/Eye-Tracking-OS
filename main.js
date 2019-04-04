@@ -226,6 +226,8 @@ function video()
     addToMap("player",function(){
         playPause();
     });
+    
+    document.getElementById("video").volume = getVol();
 }
 
 function tutorial(){
