@@ -556,9 +556,10 @@ div.border.transition
 
 .app
 	{
+        top: calc(50% - 270px);
 	    border-radius: 100%; 
 	    width: 200px; 
-	    margin-left: calc(50% - 100px); 
+	    left: calc(50% - 100px); 
 	    transition: all 0.3s ease;
 	}
 	
