@@ -29,7 +29,7 @@
                 }
             </style>
             
-            <div class="target top" onclick="gotoPage('/settings.html?=apps','top')">
+            <div id="apps-top" class="target top" onclick="gotoPage('/settings.html?=apps','top')">
                 <div id="border-top" class="border top">
                     <div>Settings</div>
                 </div>
@@ -38,7 +38,7 @@
             <div style="height: calc(50% - 270px)"></div>
             
             <div id="moviez" class="app" onclick="gotoPage('/drama.html','top')">
-                <img src="./assets/movies-logo.png" style="width: 200px;">
+                <img src="./assets/movies-logo.png" style="width: 200px;" onload="apps()">
                 <div class="setting-title movie-title"><span class="app-letter" style="transition-delay: 0.0s;">M</span><span class="app-letter" style="transition-delay: 0.02s;">o</span><span class="app-letter" style="transition-delay: 0.05s;">v</span><span class="app-letter" style="transition-delay: 0.08s;">i</span><span class="app-letter" style="transition-delay: 0.12s; transition-duration: 0.25s;">e</span><span class="app-letter" style="transition-delay: 0.17s; transition-duration: 0.3s;">z</span></div>
             </div>
         </div> <!-- end of content -->
