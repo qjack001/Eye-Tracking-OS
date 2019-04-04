@@ -189,6 +189,16 @@ function settingsload()
     addToMap("up-bright", function(){
         increaseBrightness();
     });
+    
+    addElement("down-vol");
+    addToMap("down-vol", function(){
+        volDown();
+    });
+
+    addElement("up-vol");
+    addToMap("up-vol", function(){
+        volUp();
+    });
 
 }
 
