@@ -150,8 +150,8 @@ function updateCursor(point, circleSize)
     }
 
     // Radius Calculations
-    radius[0] = 14 * Math.sqrt(circleSize[0]);
-    radius[1] = 14 * Math.sqrt(circleSize[1]);
+    radius[0] = 5 * Math.sqrt(circleSize[0]);
+    radius[1] = 5 * Math.sqrt(circleSize[1]);
 
     //console.log("Radius: "+radius);
 
