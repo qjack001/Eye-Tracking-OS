@@ -222,8 +222,8 @@ function video()
     addToMap("left-video",function(){
         skipBack();
     });
-    addElement("play-icon");
-    addToMap("play-icon",function(){
+    addElement("player");
+    addToMap("player",function(){
         playPause();
     });
 }

@@ -3,6 +3,15 @@ var hasBeenOver = []
 var hasLeft = new Set();
 var counter = 0;
 var buffer = 20;
+var radius = [0,0];
+const predictionTimer = 1;      // Interval of time in ms that the function is run
+const numStoredPoints = 7;     // Amount of previous points the program takes into account
+var locHistory = [];            // Array that holds previous locations
+var index = 0;                  // Index for locHistory
+var cx, cy, vx, vy = 0;         // Cursor varaibles (update to class if necessary)
+var CursorDrawn = false;
+
+
 function emptyList(){
     elements.length = 0;
 }
@@ -17,10 +26,7 @@ function isOverListener()
     if (prediction) 
     {
         console.log("hello");
-        let x = prediction.x;
-        let y = prediction.y;
-        //console.log("x:"+x);
-        //console.log("y:"+y);
+        
         hasBeenOver[counter] = null;
         elements.forEach(function(id){
             ele = document.getElementById(id);
@@ -35,9 +41,12 @@ function isOverListener()
             let leftStr = eleStyle.left.toString();
             let left = parseInt(leftStr.substring(0,leftStr.length-2)) - buffer;
             //console.log("left: "+left+"top:"+top+"height: "+height+"width: "+width);
-            let inside = x > left && y > top && y < top+height && x < left + width;
+            let left_side = cx - radius[0];
+            let right_side = cx + radius[0];
+            let bottom_side = cy - radius[1];
+            let top_side = cy + radius[1];
+            let inside = ((left < left_side && left_side < left + width) || (left < right_side && right_side > left + width)) && ((top < top_side && top_side < top + height) || (top < bottom_side && bottom_side < top + height));
             //console.log(inside);
-            
             if(inside)
             {
                 if(hasBeenOver.includes(id))
@@ -67,13 +76,12 @@ function isOverListener()
     }
 }
 
+// Better Prediction
+// Author Alexandre Pana
+
 // Global Variables & Constants
-const predictionTimer = 1;      // Interval of time in ms that the function is run
-const numStoredPoints = 7;     // Amount of previous points the program takes into account
-var locHistory = [];            // Array that holds previous locations
-var index = 0;                  // Index for locHistory
-var cx, cy, vx, vy = 0;         // Cursor varaibles (update to class if necessary)
-var CursorDrawn = false;
+
+
 
 // Takes array of points and returns the average.
 function averagePoints(points)
@@ -130,7 +138,6 @@ function drawCursor()
 function updateCursor(point, circleSize)
 {
     var minRadius = 100;
-    var radius = [0,0];
     var eyeCursor = document.getElementById("eyeCursor");
 
     if (!CursorDrawn){          // Adds the cursor Element to the webpage
