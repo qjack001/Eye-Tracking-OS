@@ -556,6 +556,7 @@ div.border.transition
 
 .app
 	{
+        position: absolute;
         top: calc(50% - 270px);
 	    border-radius: 100%; 
 	    width: 200px; 
