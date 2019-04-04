@@ -418,6 +418,7 @@ div.border.transition
     text-align: center;
     font-size: 40rem;
     transition: all 0.5s ease;
+    user-select: none;
 }
 
 .setting-option:hover

@@ -1,5 +1,6 @@
 var opacity = 0.1;
 var caliShow = false;
+var volume = 1.0;
 
 document.addEventListener('keydown', function(event) 
 {
@@ -123,6 +124,31 @@ function playMovie(url, film)
         }, 1000);
     }
     client.send();
+}
+
+function volUp()
+{
+    volume += 0.1;
+    
+    if(volume > 1)
+    {
+        volume = 1;
+    }
+}
+
+function volDown()
+{
+    volume -= 0.1;
+    
+    if(volume < 0)
+    {
+        volume = 0;
+    }
+}
+
+function getVol()
+{
+    return volume;
 }
 
 function toggleCalibrator()
