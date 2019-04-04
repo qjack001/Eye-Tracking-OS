@@ -125,7 +125,7 @@ function drawCursor()
     eyeCursor.style.borderRadius = "100%";
     eyeCursor.style.height = "50px";
     eyeCursor.style.width = "50px";
-    eyeCursor.style.border = "dashed 2px #fff";
+    eyeCursor.style.boxShadow = "inset 0 0 10px 0 rgba(255, 255, 255, 0.8)";
     eyeCursor.style.position = "absolute";
     eyeCursor.style.zIndex = "9999";
     eyeCursor.id = "eyeCursor";
