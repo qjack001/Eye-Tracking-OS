@@ -1,8 +1,20 @@
-# Eye-OS
+<h6 align="center">
+  <br>
+ <a href="https://guinane.xyz/Eye-Tracking-OS/"><h1>Eye-OS</h1></a>
+  <br>
+</h6>
 
-This project is the cumulative assignment for CISC-325, Human-Computer Interaction.
+<h4 align="center">A gaze-based operating system, built as the cumulative project for CISC-325 (Human-Computer Interaction).</h4>
 
-# Description
+<p align="center">
+  <a href="#description">Description</a> •
+  <a href="#implementation">Implementation</a> •
+  <a href="#evaluation">Evaluation</a> •
+  <a href="#future-development">Future Development</a> •
+  <a href="#authors">Authors</a>
+</p>
+
+## Description
 
 Eye-OS is a mock operating system that leverages eye-gazing as a primary interaction method. This proof of concept focuses on video playing as a high-level goal, and explores ways in which video playing’s sub-tasks can be optimized for this new interaction. The three main aspects to the mock-up are a file manager, a video player, and a calibrator. These components enhance the experience of using eye-gazing and, although built within the context of a video player, can be applied to more general eye-gaze-input systems as well.
 
@@ -11,7 +23,7 @@ The core goal of this project is to create a system designed for eye-gazing. Lik
 In order to solve these problems, we employed many of the concepts learned in class. The first problem, inaccuracy, was aided with the use of Fitts’ law. As discussed in the Literature Review, Fitts’ law has been adapted to gaze-based applications; however, due to the limitations of Webgazer.js, the probability of hitting the target was greatly diminished. According to Fitts’ law, by increasing the width of the target in the direction of motion, the time it will take the user to hit the target decreases. In most cases, this was achieved by simply increasing the size of the target (making the film files bigger). However, for the navigation between pages, we placed the targets on the border of the screen. A target on an edge has infinite width, allowing us to gain the smallest MT (average time to complete the movement). By applying the concepts behind Fitts’ law, we were able to improve the speed at which users could select elements of the interface, without actually improving the accuracy of the eye-tracking.
 
 
-## Perception vs. Interaction
+### Perception vs. Interaction
 
 Perception is defined as becoming aware of something through the senses. For screen-based interfaces, that sense is sight. This becomes a problem, however, when the main form of interaction is also sight. To successfully navigate the application, users must first perceive the UI, yet there is no way to do this in our system without interacting with it unintentionally. We approached this problem by limiting the effect of the user’s interaction. This way, perceiving an element never altered the state of the system in a significant way (i.e. opening a video, changing the page, etc.). 
 
@@ -31,7 +43,8 @@ Additionally, we employed a multitude of Human-Computer Interaction concepts to 
 
 The combination of all of these concepts allows Eye-OS to require the least amount of perception to understand the current state. This, when combined with the limited effect of interaction, reduces the amount of interference between perception and interaction. 
 
-# Implementation
+
+## Implementation
 
 Our project was built using standard HTML, CSS, and Javascript. The only library we used was Webgazer.js, which gave us the basic tools to track the user’s eye. The choice to build our project on the web was made for two reasons:
 
@@ -42,7 +55,7 @@ Our project was built using standard HTML, CSS, and Javascript. The only library
 Our final product uses Webgazer.js for eye-tracking, with some modifications to improve accuracy, and is hosted on our own Node.js server. To run Webgazer.js, a server with HTTPS enabled is required. A Linux VPS running Ubuntu with free HTTPS through Certbot was set up to achieve this and to allow for relatively easy changes to the site to be made. The site is dynamically served through an NGINX reverse proxy and a simple Node.js server. This is all hosted at https://beanjuice.ca, as this domain name was already owned.
 
 
-## Object Selection Improvements
+### Object Selection Improvements
 
 Designing an object selection system for a low-accuracy input is a challenging task. The first goal was to improve the accuracy of our prediction of the user’s gaze. Webgazer’s initial prediction didn’t work very well as a cursor. The predicted positions jumped suddenly and resulted in a lot of miss-clicking. We implemented a system in which Webgazer’s previous predictions were stored and averaged to find a more accurate estimation of the user’s current gaze. Averaging previous gaze positions results in a loss in response time for obvious reasons but was made up for with improved accuracy. We found that the best compromise between these two factors was when the previous 7 locations were used to determine the average.
 
@@ -50,26 +63,26 @@ The next change we made was using a selection area rather than a just a singe co
  
 The final change we made to the cursor was to make its size dynamic. We linked its X and Y radius to the standard deviation of our previous locations. Larger SD meant that we were less sure of our gaze prediction, and so the area increased. When the user fixated on something, the circle got smaller to allow for more accurate selections. This change gave the user a lot more visual feedback on how our system was working and felt more natural to them. Users enjoyed the new cursor and found it to be a much-needed improvement over our initial method. The transparent center didn’t directly get in the way of what the user was looking at, and we saw a significant reduction in rapid cursor movements.
 
-## (Ideal) Physical Installation
+### (Ideal) Physical Installation
 
 Eye-OS can be interacted with from anywhere. Often this results in users using low-quality webcams in low-light conditions. For the demonstration of our system, we created an ideal setup to maximize the accuracy of the eye-tracking. The implementation of this setup involved a Logitech Brio 4K webcam to increase the quality of image, a projector to enlarge the screen, and a bright light to improve the lighting conditions. The larger screen increased the perceived accuracy of the system by exaggerating the amount of eye movement required to look around the UI.
 
-# Evaluation
+## Evaluation
 
 After completion of the initial prototype, we tested our system with users unfamiliar with eye-gazing interaction models. Overall, it seems that our designer’s mental model and the users’ mental models were relatively similar. This was probably due to the amount of time we spent, before we began development, informally asking others what they would want from our project and testing the system with a hi-fi prototype throughout development. Our general tasks were more or less aligned with what users thought (gaze at an image for a description, look to the bottom to exit videos, look to the left and right to navigate between pages, etc.). Of course, there were some misunderstandings and differences. Due to the lack of accuracy with the eye tracking, users ran into many skill-based slips, and it was sometimes difficult to recover from an incorrect click on a film since you had to access the bottom edge of the screen via eye-tracking.
 
-# Future Development
+## Future Development
 
 With more resources, it would obviously be important to develop more applications for the operating system. We feel that eye-gazing is powerful for data management, so it would be interesting to see in what way eye-tracking might change something like email or word processing. It would also be useful to try and further develop the ways in which the users are taught how the interactions work. When we conducted user studies, we found that we had to provide quite a bit of explanation upfront just so that users understood the new environment. Given more time, it might be beneficial to develop some animated tutorial that could guide newcomers around our new eye-tracking paradigm. 
 
-# Contributors
+## Authors
 
-**Jack Guinane** — Front-end design and development
+**[Jack Guinane](https://github.com/qjack001)** — Front-end design and development
 
-**Quinn Pollock** — Back-end development (focus on setting up framework)
+**[Quinn Pollock](https://github.com/HoloPollock)** — Back-end development (focus on setting up framework)
 
-**Alexandre Pana** – Back-end development (focus on improved eye-tracking)      
+**[Alexandre Pana](https://github.com/alexandrepana)** – Back-end development (focus on improved eye-tracking)      
 
-**Maxwell Keleher** — Front-end contribution, user testing
+**[Maxwell Keleher](https://github.com/maxkele)** — Front-end contribution, user testing
 
-**David Vassos** — Media creation
+**[David Vassos](https://github.com/davidvassos)** — Media creation
