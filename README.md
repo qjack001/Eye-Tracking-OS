@@ -1,10 +1,10 @@
 <h6 align="center">
   <br>
- <a href="https://guinane.xyz/Eye-Tracking-OS/"><h1>Eye-OS</h1></a>
+    <a href="https://guinane.xyz/Eye-Tracking-OS/"><img width="300" src="https://raw.githubusercontent.com/qjack001/Eye-Tracking-OS/master/assets/logo.png" alt="Eye-OS logo"/></a>
   <br>
 </h6>
 
-<h4 align="center">A gaze-based operating system, built as the cumulative project for CISC-325 (Human-Computer Interaction).</h4>
+<h4 align="center">Eye-OS is a gaze-based operating system, built as the cumulative project for CISC-325 (Human-Computer Interaction).</h4>
 
 <p align="center">
   <a href="#description">Description</a> •
@@ -13,6 +13,8 @@
   <a href="#future-development">Future Development</a> •
   <a href="#authors">Authors</a>
 </p>
+
+![screenshot](https://raw.githubusercontent.com/qjack001/Eye-Tracking-OS/master/assets/screenshot.png)
 
 ## Description
 
@@ -43,6 +45,7 @@ Additionally, we employed a multitude of Human-Computer Interaction concepts to 
 
 The combination of all of these concepts allows Eye-OS to require the least amount of perception to understand the current state. This, when combined with the limited effect of interaction, reduces the amount of interference between perception and interaction. 
 
+![animated demo](https://raw.githubusercontent.com/qjack001/Eye-Tracking-OS/master/assets/demo.gif)
 
 ## Implementation
 
