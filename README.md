@@ -11,7 +11,8 @@
   <a href="#implementation">Implementation</a> •
   <a href="#evaluation">Evaluation</a> •
   <a href="#future-development">Future Development</a> •
-  <a href="#authors">Authors</a>
+  <a href="#authors">Authors</a> •
+  <a href="https://github.com/qjack001/Eye-Tracking-OS/blob/master/assets/d530Poster.pdf">Poster</a>
 </p>
 
 ![screenshot](https://raw.githubusercontent.com/qjack001/Eye-Tracking-OS/master/assets/screenshot.png)
