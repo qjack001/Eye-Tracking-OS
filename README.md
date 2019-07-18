@@ -4,7 +4,7 @@
   <br>
 </h6>
 
-<h4 align="center">Eye-OS is a gaze-based operating system, built as the cumulative project for CISC-325 (Human-Computer Interaction). Try it yourself at [beanjuice.ca](https://beanjuice.ca/)</h4>
+<h4 align="center">Eye-OS is a gaze-based operating system, built as the cumulative project for CISC-325 (Human-Computer Interaction). Try it yourself at <a href='https://beanjuice.ca/'>beanjuice.ca</a>.</h4>
 
 <p align="center">
   <a href="#description">Description</a> •
